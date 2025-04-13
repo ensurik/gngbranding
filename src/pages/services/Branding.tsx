@@ -15,11 +15,15 @@ const Branding = () => {
         <Breadcrumb className="mb-8">
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink as={Link} to="/">Hjem</BreadcrumbLink>
+              <BreadcrumbLink asChild>
+                <Link to="/">Hjem</Link>
+              </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink as={Link} to="/">Tjenester</BreadcrumbLink>
+              <BreadcrumbLink asChild>
+                <Link to="/">Tjenester</Link>
+              </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
