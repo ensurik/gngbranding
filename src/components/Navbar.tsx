@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
@@ -38,7 +37,15 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center">
-              <img src="/lovable-uploads/a2a7ebd8-4472-46d5-b442-47bc4d9d980c.png" alt="GnG Branding Logo" className="h-12" />
+              <img 
+                src="/lovable-uploads/a2a7ebd8-4472-46d5-b442-47bc4d9d980c.png" 
+                alt="GnG Branding Logo" 
+                className="h-12 object-contain" 
+                style={{ 
+                  backgroundColor: 'transparent', 
+                  mixBlendMode: 'multiply' 
+                }} 
+              />
             </Link>
           </div>
           
