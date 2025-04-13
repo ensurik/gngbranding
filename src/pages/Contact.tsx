@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import Navbar from "@/components/Navbar";
@@ -48,11 +47,9 @@ const Contact = () => {
         to_email: "kontakt@gngbranding.no" // Mottakers e-post
       };
       
-      // For å bruke EmailJS må du registrere deg på emailjs.com og få en service_id og template_id
-      // Du trenger å sette inn dine egne IDs her
-      const serviceID = "YOUR_SERVICE_ID"; // Erstatt med din service ID
-      const templateID = "YOUR_TEMPLATE_ID"; // Erstatt med din template ID
-      const userID = "YOUR_USER_ID"; // Erstatt med din user ID
+      const serviceID = "service_flil9f7";
+      const templateID = "template_2uuko0t";
+      const userID = "GZMZ6syWkL0Xv_7e7";
       
       await emailjs.send(serviceID, templateID, templateParams, userID);
       
