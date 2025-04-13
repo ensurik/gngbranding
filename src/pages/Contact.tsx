@@ -1,9 +1,8 @@
-
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
-import { useState } from "react";
-import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -14,38 +13,67 @@ const Contact = () => {
     company: "",
     message: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
     
-    // Show success message
-    toast({
-      title: "Melding sendt!",
-      description: "Vi vil ta kontakt med deg så snart som mulig.",
-      duration: 5000,
-    });
+    // Validere at påkrevde felt er utfylt
+    if (!formData.name || !formData.email || !formData.message) {
+      toast({
+        title: "Manglende informasjon",
+        description: "Vennligst fyll ut navn, e-post og melding.",
+        variant: "destructive"
+      });
+      return;
+    }
     
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-      message: ""
-    });
+    setIsSubmitting(true);
+    
+    try {
+      // Simulerer en API-kall (erstatt med faktisk API-kall)
+      console.log("Sender kontaktskjema:", formData);
+      
+      // Venter i 2 sekunder for å simulere nettverksforsinkelse
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
+      // Tømme skjemaet
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        message: ""
+      });
+      
+      // Vellykket innsending
+      toast({
+        title: "Melding sendt!",
+        description: "Vi vil kontakte deg så snart som mulig.",
+        duration: 5000,
+      });
+      
+    } catch (error) {
+      // Feilhåndtering
+      toast({
+        title: "Feil ved innsending",
+        description: "Kunne ikke sende meldingen. Vennligst prøv igjen senere.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
       
-      {/* Hero Section */}
       <div className="bg-brand-blue text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Kontakt Oss</h1>
@@ -55,11 +83,9 @@ const Contact = () => {
         </div>
       </div>
       
-      {/* Contact Section */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Info */}
             <div>
               <h2 className="text-3xl font-bold text-brand-blue mb-8">La oss snakke sammen</h2>
               <p className="text-brand-gray mb-12">
@@ -101,7 +127,6 @@ const Contact = () => {
               </div>
             </div>
             
-            {/* Contact Form */}
             <div className="bg-brand-lightGray p-8 rounded-lg">
               <h2 className="text-2xl font-bold text-brand-blue mb-6">Send oss en melding</h2>
               <form onSubmit={handleSubmit}>
@@ -172,9 +197,14 @@ const Contact = () => {
                 
                 <button
                   type="submit"
-                  className="w-full bg-brand-blue text-white font-medium py-3 rounded-md hover:bg-blue-800 transition-colors"
+                  disabled={isSubmitting}
+                  className={`w-full font-medium py-3 rounded-md transition-colors ${
+                    isSubmitting 
+                      ? "bg-gray-400 text-gray-200 cursor-not-allowed" 
+                      : "bg-brand-blue text-white hover:bg-blue-800"
+                  }`}
                 >
-                  Send melding
+                  {isSubmitting ? "Sender..." : "Send melding"}
                 </button>
               </form>
             </div>
