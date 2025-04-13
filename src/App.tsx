@@ -10,6 +10,12 @@ import Contact from "./pages/Contact";
 import Portfolio from "./pages/Portfolio";
 import NotFound from "./pages/NotFound";
 
+// Import service pages
+import WebDesign from "./pages/services/WebDesign";
+import GraphicDesign from "./pages/services/GraphicDesign";
+import DigitalMarketing from "./pages/services/DigitalMarketing";
+import Branding from "./pages/services/Branding";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -23,6 +29,13 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/portfolio" element={<Portfolio />} />
+          
+          {/* Service routes */}
+          <Route path="/tjenester/webdesign" element={<WebDesign />} />
+          <Route path="/tjenester/grafisk-design" element={<GraphicDesign />} />
+          <Route path="/tjenester/digital-markedsføring" element={<DigitalMarketing />} />
+          <Route path="/tjenester/merkevare" element={<Branding />} />
+          
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
