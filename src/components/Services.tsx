@@ -1,5 +1,4 @@
-
-import { Globe, PenTool, Smartphone, Megaphone } from "lucide-react";
+import { Globe, PenTool, Smartphone, Megaphone, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Services = () => {
