@@ -1,8 +1,10 @@
+
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import emailjs from "emailjs-com";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -36,11 +38,23 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // Simulerer en API-kall (erstatt med faktisk API-kall)
-      console.log("Sender kontaktskjema:", formData);
+      // Sender e-post via EmailJS
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        from_phone: formData.phone,
+        from_company: formData.company,
+        message: formData.message,
+        to_email: "kontakt@gngbranding.no" // Mottakers e-post
+      };
       
-      // Venter i 2 sekunder for å simulere nettverksforsinkelse
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // For å bruke EmailJS må du registrere deg på emailjs.com og få en service_id og template_id
+      // Du trenger å sette inn dine egne IDs her
+      const serviceID = "YOUR_SERVICE_ID"; // Erstatt med din service ID
+      const templateID = "YOUR_TEMPLATE_ID"; // Erstatt med din template ID
+      const userID = "YOUR_USER_ID"; // Erstatt med din user ID
+      
+      await emailjs.send(serviceID, templateID, templateParams, userID);
       
       // Tømme skjemaet
       setFormData({
@@ -54,15 +68,15 @@ const Contact = () => {
       // Vellykket innsending
       toast({
         title: "Melding sendt!",
-        description: "Vi vil kontakte deg så snart som mulig.",
+        description: "Vi har mottatt din henvendelse og vil kontakte deg så snart som mulig.",
         duration: 5000,
       });
       
     } catch (error) {
-      // Feilhåndtering
+      console.error("Feil ved sending av e-post:", error);
       toast({
         title: "Feil ved innsending",
-        description: "Kunne ikke sende meldingen. Vennligst prøv igjen senere.",
+        description: "Det oppstod en feil ved sending av meldingen. Vennligst prøv igjen senere eller kontakt oss direkte via telefon.",
         variant: "destructive"
       });
     } finally {
