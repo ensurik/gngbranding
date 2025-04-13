@@ -38,8 +38,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center">
-              <span className="text-2xl font-bold text-brand-blue">GnG</span>
-              <span className="text-2xl font-medium text-brand-accent">Branding</span>
+              <img src="/lovable-uploads/a2a7ebd8-4472-46d5-b442-47bc4d9d980c.png" alt="GnG Branding Logo" className="h-12" />
             </Link>
           </div>
           
@@ -57,7 +56,7 @@ const Navbar = () => {
             <NavLink to="/contact" isActive={isActive('/contact')}>
               Kontakt
             </NavLink>
-            <a href="tel:+4712345678" className="ml-4 inline-flex items-center px-4 py-2 bg-brand-blue text-white rounded-md hover:bg-brand-blue/90 transition-all text-sm">
+            <a href="tel:+4712345678" className="ml-4 inline-flex items-center px-4 py-2 bg-[#0e1f33] text-white rounded-md hover:bg-[#0e1f33]/90 transition-all text-sm">
               <Phone className="mr-2 h-4 w-4" />
               +47 123 45 678
             </a>
@@ -96,7 +95,7 @@ const Navbar = () => {
               Kontakt
             </MobileNavLink>
             <div className="py-3">
-              <a href="tel:+4712345678" className="inline-flex items-center w-full px-4 py-2 bg-brand-blue text-white rounded-md hover:bg-brand-blue/90 transition-all text-sm">
+              <a href="tel:+4712345678" className="inline-flex items-center w-full px-4 py-2 bg-[#0e1f33] text-white rounded-md hover:bg-[#0e1f33]/90 transition-all text-sm">
                 <Phone className="mr-2 h-4 w-4" />
                 +47 123 45 678
               </a>
@@ -115,8 +114,8 @@ const NavLink = ({ to, isActive, children }: { to: string; isActive: boolean; ch
       to={to} 
       className={`px-3 py-2 text-sm font-medium rounded-md ${
         isActive 
-          ? 'text-brand-blue bg-gray-100' 
-          : 'text-brand-gray hover:text-brand-blue hover:bg-gray-50'
+          ? 'text-[#0e1f33] bg-gray-100' 
+          : 'text-brand-gray hover:text-[#0e1f33] hover:bg-gray-50'
       } transition-colors`}
     >
       {children}
@@ -136,8 +135,8 @@ const MobileNavLink = ({ to, isActive, onClick, children }: {
       to={to} 
       className={`block px-3 py-2 rounded-md text-base font-medium ${
         isActive 
-          ? 'text-brand-blue bg-gray-100' 
-          : 'text-brand-gray hover:text-brand-blue hover:bg-gray-50'
+          ? 'text-[#0e1f33] bg-gray-100' 
+          : 'text-brand-gray hover:text-[#0e1f33] hover:bg-gray-50'
       } transition-colors`}
       onClick={onClick}
     >

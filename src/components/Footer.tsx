@@ -1,17 +1,20 @@
 
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Shield, Award } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-brand-blue text-white py-12">
+    <footer className="bg-[#0e1f33] text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4">GnGBranding</h3>
+            <div className="mb-6">
+              <img src="/lovable-uploads/a2a7ebd8-4472-46d5-b442-47bc4d9d980c.png" alt="GnG Branding Logo" className="h-14" />
+              <p className="text-xs mt-1 text-gray-400">BRANDING SOLUTIONS</p>
+            </div>
             <p className="mb-4 text-gray-300">
-              Vi hjelper din bedrift med å bygge et sterkt merkevare og digitalt nærvær.
+              Vi hjelper din bedrift med å bygge et sterkt merkevare og digitalt nærvær som skaper resultater og vekst.
             </p>
             <div className="flex space-x-4">
               {/* Social Media Icons */}
@@ -37,23 +40,66 @@ const Footer = () => {
             </div>
           </div>
           
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-xl font-bold mb-4">Hurtiglenker</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/" className="text-gray-300 hover:text-white transition-colors">Hjem</Link>
-              </li>
-              <li>
-                <Link to="/about" className="text-gray-300 hover:text-white transition-colors">Om oss</Link>
-              </li>
-              <li>
-                <Link to="/portfolio" className="text-gray-300 hover:text-white transition-colors">Portefølje</Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-gray-300 hover:text-white transition-colors">Kontakt</Link>
-              </li>
-            </ul>
+          {/* Links and Services */}
+          <div className="grid grid-cols-2">
+            <div>
+              <h3 className="text-xl font-bold mb-4">Hurtiglenker</h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link to="/" className="text-gray-300 hover:text-white transition-colors inline-flex items-center">
+                    <span className="h-1 w-1 rounded-full bg-[#e74c3c] mr-2"></span>
+                    Hjem
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/about" className="text-gray-300 hover:text-white transition-colors inline-flex items-center">
+                    <span className="h-1 w-1 rounded-full bg-[#e74c3c] mr-2"></span>
+                    Om oss
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/portfolio" className="text-gray-300 hover:text-white transition-colors inline-flex items-center">
+                    <span className="h-1 w-1 rounded-full bg-[#e74c3c] mr-2"></span>
+                    Portefølje
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/contact" className="text-gray-300 hover:text-white transition-colors inline-flex items-center">
+                    <span className="h-1 w-1 rounded-full bg-[#e74c3c] mr-2"></span>
+                    Kontakt
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold mb-4">Tjenester</h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link to="/tjenester/webdesign" className="text-gray-300 hover:text-white transition-colors inline-flex items-center">
+                    <span className="h-1 w-1 rounded-full bg-[#e74c3c] mr-2"></span>
+                    Webdesign
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/tjenester/grafisk-design" className="text-gray-300 hover:text-white transition-colors inline-flex items-center">
+                    <span className="h-1 w-1 rounded-full bg-[#e74c3c] mr-2"></span>
+                    Grafisk Design
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/tjenester/digital-markedsføring" className="text-gray-300 hover:text-white transition-colors inline-flex items-center">
+                    <span className="h-1 w-1 rounded-full bg-[#e74c3c] mr-2"></span>
+                    Digital Markedsføring
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/tjenester/merkevare" className="text-gray-300 hover:text-white transition-colors inline-flex items-center">
+                    <span className="h-1 w-1 rounded-full bg-[#e74c3c] mr-2"></span>
+                    Merkevarebygging
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
           
           {/* Contact Info */}
@@ -61,25 +107,47 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4">Kontakt oss</h3>
             <ul className="space-y-3">
               <li className="flex items-start">
-                <MapPin className="h-5 w-5 mr-2 mt-0.5 text-brand-accent" />
+                <MapPin className="h-5 w-5 mr-2 mt-0.5 text-[#e74c3c]" />
                 <span>Oslo, Norge</span>
               </li>
               <li className="flex items-center">
-                <Phone className="h-5 w-5 mr-2 text-brand-accent" />
+                <Phone className="h-5 w-5 mr-2 text-[#e74c3c]" />
                 <span>+47 123 45 678</span>
               </li>
               <li className="flex items-center">
-                <Mail className="h-5 w-5 mr-2 text-brand-accent" />
+                <Mail className="h-5 w-5 mr-2 text-[#e74c3c]" />
                 <span>kontakt@gngbranding.no</span>
               </li>
+              <li className="flex items-center">
+                <Clock className="h-5 w-5 mr-2 text-[#e74c3c]" />
+                <span>Man-Fre: 09.00 - 16.00</span>
+              </li>
             </ul>
+            
+            <div className="mt-6 flex space-x-4">
+              <div className="flex items-center">
+                <Shield className="h-5 w-5 mr-2 text-[#e74c3c]" />
+                <span className="text-sm">Sikker betaling</span>
+              </div>
+              <div className="flex items-center">
+                <Award className="h-5 w-5 mr-2 text-[#e74c3c]" />
+                <span className="text-sm">Kvalitetsgaranti</span>
+              </div>
+            </div>
           </div>
         </div>
         
         <div className="mt-8 pt-8 border-t border-gray-700">
-          <p className="text-center text-gray-300">
-            © {new Date().getFullYear()} GnGBranding. Alle rettigheter reservert.
-          </p>
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-center text-gray-300 mb-4 md:mb-0">
+              © {new Date().getFullYear()} GnGBranding. Alle rettigheter reservert.
+            </p>
+            <div className="flex space-x-4">
+              <Link to="/personvern" className="text-gray-300 hover:text-white text-sm">Personvern</Link>
+              <Link to="/cookies" className="text-gray-300 hover:text-white text-sm">Cookies</Link>
+              <Link to="/vilkar" className="text-gray-300 hover:text-white text-sm">Vilkår</Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

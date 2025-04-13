@@ -7,12 +7,14 @@ import Testimonials from "@/components/Testimonials";
 import Team from "@/components/Team";
 import CallToAction from "@/components/CallToAction";
 import Footer from "@/components/Footer";
+import TrustSignals from "@/components/TrustSignals";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
       <Hero />
+      <TrustSignals />
       <Services />
       <FeaturedWork />
       <Team />
