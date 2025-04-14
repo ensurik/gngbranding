@@ -1,8 +1,8 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { Phone, Mail, Clock } from "lucide-react";
 import emailjs from "emailjs-com";
 
 const Contact = () => {
@@ -100,14 +100,6 @@ const Contact = () => {
               </p>
               
               <div className="space-y-6">
-                <div className="flex items-start">
-                  <MapPin className="h-6 w-6 text-brand-accent mr-4 mt-1" />
-                  <div>
-                    <h3 className="text-lg font-semibold text-brand-blue">Besøksadresse</h3>
-                    <p className="text-brand-gray">Storgata 1, 0155 Oslo</p>
-                  </div>
-                </div>
-                
                 <div className="flex items-start">
                   <Phone className="h-6 w-6 text-brand-accent mr-4 mt-1" />
                   <div>
