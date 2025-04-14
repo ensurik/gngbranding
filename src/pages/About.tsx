@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CallToAction from "@/components/CallToAction";
@@ -30,14 +29,14 @@ const About = () => {
 
   const team = [
     {
-      name: "Gunnar Hansen",
+      name: "Gabriel Milinkovic",
       title: "Medgrunnlegger & Kreativ Direktør",
-      bio: "Med over 15 års erfaring innen grafisk design og merkevarebygging har Gunnar ledet kreative prosjekter for noen av Norges mest kjente bedrifter.",
+      bio: "Med over 15 års erfaring innen grafisk design og merkevarebygging har Gabriel ledet kreative prosjekter for noen av Norges mest kjente bedrifter.",
     },
     {
-      name: "Grete Nilsen",
+      name: "Joachim Johansen",
       title: "Medgrunnlegger & Strategisk Direktør",
-      bio: "Grete har en sterk bakgrunn innen markedsføring og forretningsutvikling, og hjelper kunder med å utvikle effektive digitale strategier.",
+      bio: "Joachim har en sterk bakgrunn innen markedsføring og forretningsutvikling, og hjelper kunder med å utvikle effektive digitale strategier.",
     },
   ];
 
