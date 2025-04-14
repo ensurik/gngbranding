@@ -1,3 +1,4 @@
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CallToAction from "@/components/CallToAction";
@@ -61,13 +62,13 @@ const About = () => {
             <div>
               <h2 className="text-3xl font-bold text-brand-blue mb-6">Vår Historie</h2>
               <p className="text-brand-gray mb-4">
-                GnGBranding ble grunnlagt i 2018 av Gunnar Hansen og Grete Nilsen med en visjon om å hjelpe små og mellomstore bedrifter med å bygge sterke merkevarer og digitale løsninger.
+                GnGBranding ble startet av Gabriel Milinkovic og Joachim Johansen med en klar visjon: å hjelpe både store og små bedrifter med å digitalisere sine produkter og tjenester for å nå et større marked.
               </p>
               <p className="text-brand-gray mb-4">
-                Med bakgrunn fra både design og markedsføring, kombinerer vi kreativitet med strategisk tenkning for å skape løsninger som ikke bare ser bra ut, men som også gir resultater.
+                I en tid der digital tilstedeværelse blir stadig viktigere, så vi et behov for å tilby skreddersydde digitale løsninger som faktisk gir resultater. Vi startet med enkle prosjekter for lokale bedrifter, og har gradvis bygget opp vår kompetanse og portefølje.
               </p>
               <p className="text-brand-gray">
-                I dag har vi vokst til et team av dedikerte fagfolk som har hjulpet et bredt spekter av kunder med å styrke sin digitale tilstedeværelse og bygge sterke merkevarer.
+                I dag fokuserer vi på å kombinere kreativ design med strategisk markedsføring for å hjelpe våre kunder med å skape sterke digitale identiteter som skiller seg ut i markedet og driver vekst. Vår styrke ligger i vår evne til å forstå hver enkelt bedrifts unike behov og utfordringer.
               </p>
             </div>
             <div className="bg-brand-lightGray h-96 rounded-lg flex items-center justify-center">
