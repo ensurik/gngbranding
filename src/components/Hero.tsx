@@ -1,8 +1,77 @@
 
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import emailjs from "emailjs-com";
+import { useToast } from "@/hooks/use-toast";
 
 const Hero = () => {
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    service: ""
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!formData.name || !formData.email || !formData.service) {
+      toast({
+        title: "Manglende informasjon",
+        description: "Vennligst fyll ut alle feltene.",
+        variant: "destructive"
+      });
+      return;
+    }
+    
+    setIsSubmitting(true);
+    
+    try {
+      const templateParams = {
+        from_name: formData.name,
+        customer_mail: formData.email,
+        service_type: formData.service,
+        type: "pricing_estimate",
+        to_email: "kontakt@gngbranding.no"
+      };
+      
+      const serviceID = "service_flil9f7";
+      const templateID = "template_2uuko0t";
+      const userID = "GZMZ6syWkL0Xv_7e7";
+      
+      await emailjs.send(serviceID, templateID, templateParams, userID);
+      
+      setFormData({
+        name: "",
+        email: "",
+        service: ""
+      });
+      
+      toast({
+        title: "Forespørsel sendt!",
+        description: "Vi har mottatt din forespørsel om et raskt prisestimat og vil kontakte deg så snart som mulig.",
+        duration: 5000,
+      });
+      
+    } catch (error) {
+      console.error("Feil ved sending av e-post:", error);
+      toast({
+        title: "Feil ved innsending",
+        description: "Det oppstod en feil ved sending av forespørselen. Vennligst prøv igjen senere.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const benefits = [
     "Profesjonell design som konverterer besøkende til kunder",
     "Komplett merkevarebygging fra logo til digital strategi",
@@ -55,23 +124,50 @@ const Hero = () => {
           <div className="hidden md:block md:w-2/5 animate-fadeIn" style={{animationDelay: "0.5s"}}>
             <div className="bg-white/10 p-6 rounded-lg backdrop-blur-sm border border-white/20">
               <h3 className="text-xl font-bold mb-4">Få et raskt prisestimat</h3>
-              <form className="space-y-4">
+              <form className="space-y-4" onSubmit={handleSubmit}>
                 <div>
-                  <input type="text" placeholder="Ditt navn" className="w-full px-4 py-2 rounded bg-white/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50" />
+                  <input 
+                    type="text" 
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Ditt navn" 
+                    className="w-full px-4 py-2 rounded bg-white/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50" 
+                  />
                 </div>
                 <div>
-                  <input type="email" placeholder="Din e-post" className="w-full px-4 py-2 rounded bg-white/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50" />
+                  <input 
+                    type="email" 
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="Din e-post" 
+                    className="w-full px-4 py-2 rounded bg-white/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50" 
+                  />
                 </div>
                 <div>
-                  <select className="w-full px-4 py-2 rounded bg-white/20 border border-white/30 text-white focus:outline-none focus:ring-2 focus:ring-white/50">
+                  <select 
+                    name="service"
+                    value={formData.service}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 rounded bg-white/20 border border-white/30 text-white focus:outline-none focus:ring-2 focus:ring-white/50"
+                  >
                     <option value="" className="text-gray-800">Velg tjeneste</option>
                     <option value="webdesign" className="text-gray-800">Webdesign</option>
                     <option value="branding" className="text-gray-800">Merkevarebygging</option>
                     <option value="marketing" className="text-gray-800">Digital Markedsføring</option>
                   </select>
                 </div>
-                <button type="button" className="w-full bg-white text-[#0e1f33] font-medium py-2 px-4 rounded hover:bg-gray-100 transition-colors">
-                  Få prisestimat
+                <button 
+                  type="submit" 
+                  disabled={isSubmitting}
+                  className={`w-full font-medium py-2 px-4 rounded transition-colors ${
+                    isSubmitting 
+                      ? "bg-gray-400 text-gray-200 cursor-not-allowed" 
+                      : "bg-white text-[#0e1f33] hover:bg-gray-100"
+                  }`}
+                >
+                  {isSubmitting ? "Sender..." : "Få prisestimat"}
                 </button>
               </form>
             </div>

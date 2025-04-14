@@ -1,7 +1,80 @@
+
 import { ArrowRight, Phone, Mail, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import emailjs from "emailjs-com";
+import { useToast } from "@/hooks/use-toast";
 
 const CallToAction = () => {
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    service: ""
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+  
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!formData.name || !formData.email || !formData.service) {
+      toast({
+        title: "Manglende informasjon",
+        description: "Vennligst fyll ut navn, e-post og velg tjeneste.",
+        variant: "destructive"
+      });
+      return;
+    }
+    
+    setIsSubmitting(true);
+    
+    try {
+      const templateParams = {
+        from_name: formData.name,
+        customer_mail: formData.email,
+        from_phone: formData.phone,
+        service_type: formData.service,
+        type: "quote_request",
+        to_email: "kontakt@gngbranding.no"
+      };
+      
+      const serviceID = "service_flil9f7";
+      const templateID = "template_2uuko0t";
+      const userID = "GZMZ6syWkL0Xv_7e7";
+      
+      await emailjs.send(serviceID, templateID, templateParams, userID);
+      
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        service: ""
+      });
+      
+      toast({
+        title: "Forespørsel sendt!",
+        description: "Vi har mottatt din forespørsel om et uforpliktende tilbud og vil kontakte deg så snart som mulig.",
+        duration: 5000,
+      });
+      
+    } catch (error) {
+      console.error("Feil ved sending av e-post:", error);
+      toast({
+        title: "Feil ved innsending",
+        description: "Det oppstod en feil ved sending av forespørselen. Vennligst prøv igjen senere.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const benefits = [
     "Få en profesjonell nettside som konverterer besøkende til kunder",
     "Bygg en sterk merkevare som skiller deg ut i markedet",
@@ -51,26 +124,60 @@ const CallToAction = () => {
             <div className="md:w-4/12">
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <h3 className="text-xl font-bold text-[#0e1f33] mb-4">Få et uforpliktende tilbud</h3>
-                <form className="space-y-4">
+                <form className="space-y-4" onSubmit={handleSubmit}>
                   <div>
-                    <input type="text" placeholder="Ditt navn" className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#0e1f33]/50" />
+                    <input 
+                      type="text" 
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder="Ditt navn" 
+                      className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#0e1f33]/50" 
+                    />
                   </div>
                   <div>
-                    <input type="email" placeholder="Din e-post" className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#0e1f33]/50" />
+                    <input 
+                      type="email" 
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="Din e-post" 
+                      className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#0e1f33]/50" 
+                    />
                   </div>
                   <div>
-                    <input type="tel" placeholder="Ditt telefonnummer" className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#0e1f33]/50" />
+                    <input 
+                      type="tel" 
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      placeholder="Ditt telefonnummer" 
+                      className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#0e1f33]/50" 
+                    />
                   </div>
                   <div>
-                    <select className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#0e1f33]/50">
+                    <select 
+                      name="service"
+                      value={formData.service}
+                      onChange={handleChange}
+                      className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#0e1f33]/50"
+                    >
                       <option value="">Velg tjeneste</option>
                       <option value="webdesign">Webdesign</option>
                       <option value="branding">Merkevarebygging</option>
                       <option value="marketing">Digital Markedsføring</option>
                     </select>
                   </div>
-                  <button type="button" className="w-full bg-[#e74c3c] text-white font-bold py-3 px-4 rounded hover:bg-[#c0392b] transition-colors flex items-center justify-center">
-                    Send forespørsel
+                  <button 
+                    type="submit" 
+                    disabled={isSubmitting}
+                    className={`w-full text-white font-bold py-3 px-4 rounded flex items-center justify-center ${
+                      isSubmitting 
+                        ? "bg-gray-400 cursor-not-allowed" 
+                        : "bg-[#e74c3c] hover:bg-[#c0392b] transition-colors"
+                    }`}
+                  >
+                    {isSubmitting ? "Sender..." : "Send forespørsel"}
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </button>
                 </form>
