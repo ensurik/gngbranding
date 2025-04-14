@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import Navbar from "@/components/Navbar";
@@ -40,7 +41,7 @@ const Contact = () => {
       // Sender e-post via EmailJS
       const templateParams = {
         from_name: formData.name,
-        from_email: formData.email,
+        customer_mail: formData.email, // Endret fra from_email til customer_mail
         from_phone: formData.phone,
         from_company: formData.company,
         message: formData.message,
