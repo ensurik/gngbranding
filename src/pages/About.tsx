@@ -31,12 +31,12 @@ const About = () => {
     {
       name: "Gabriel Milinkovic",
       title: "Medgrunnlegger & Kreativ Direktør",
-      bio: "Gabriel er en ung og fremadstormende designer som grunnla GnGBranding med et klart mål: å hjelpe mindre bedrifter med å skape sterke visuelle identiteter. Med en nylig avsluttet mastergrad i design og erfaring fra flere freelance-prosjekter, har han en moderne og løsningsorientert tilnærming til merkevarebygging.",
+      bio: "Gabriel er en ung gründer som brenner for design og små bedrifters potensial. Med kreativ tenkning og selvlært kompetanse innen grafisk design, startet han GnGBranding for å hjelpe lokale bedrifter med å løfte sin visuelle identitet.",
     },
     {
       name: "Joachim Johansen",
       title: "Medgrunnlegger & Strategisk Direktør",
-      bio: "Joachim er en digital strateg med bakgrunn fra startups og markedsføringsbransjen. Han har de siste årene arbeidet tett med oppvoksende bedrifter for å utvikle digitale vekststrategier. Hans erfaring med sosiale medier, SEO og digital markedsføring gjør ham til en sentral bidragsyter i GnGBranding sin visjon om å løfte små og mellomstore bedrifter.",
+      bio: "Joachim har alltid vært interessert i markedsføring og digitale muligheter. Uten formell utdanning, men med stor pågangsmot, har han lært seg digitale markedsføringsstrategier gjennom praktisk erfaring og online kurs. Hans mål er å gjøre digital markedsføring tilgjengelig for mindre bedrifter.",
     },
   ];
 
