@@ -1,4 +1,3 @@
-
 import { ArrowRight, Phone, Mail, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -34,11 +33,11 @@ const CallToAction = () => {
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                 <a 
-                  href="tel:+4712345678" 
+                  href="tel:+4791246491" 
                   className="inline-flex items-center justify-center px-6 py-3 bg-white text-[#0e1f33] font-medium rounded-md hover:bg-gray-100 transition-colors"
                 >
                   <Phone className="mr-2 h-5 w-5" />
-                  +47 123 45 678
+                  +47 912 46 491
                 </a>
                 <a 
                   href="mailto:kontakt@gngbranding.no" 
