@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Clock, Shield, Award } from "lucide-react";
 
@@ -7,7 +6,6 @@ const Footer = () => {
     <footer className="bg-[#0e1f33] text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Company Info */}
           <div>
             <div className="mb-6">
               <img src="/lovable-uploads/a2a7ebd8-4472-46d5-b442-47bc4d9d980c.png" alt="GnG Branding Logo" className="h-14" />
@@ -17,7 +15,6 @@ const Footer = () => {
               Vi hjelper din bedrift med å bygge et sterkt merkevare og digitalt nærvær som skaper resultater og vekst.
             </p>
             <div className="flex space-x-4">
-              {/* Social Media Icons */}
               <a href="#" className="text-gray-300 hover:text-white transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6">
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
@@ -40,7 +37,6 @@ const Footer = () => {
             </div>
           </div>
           
-          {/* Links and Services */}
           <div className="grid grid-cols-2">
             <div>
               <h3 className="text-xl font-bold mb-4">Hurtiglenker</h3>
@@ -102,7 +98,6 @@ const Footer = () => {
             </div>
           </div>
           
-          {/* Contact Info */}
           <div>
             <h3 className="text-xl font-bold mb-4">Kontakt oss</h3>
             <ul className="space-y-3">
@@ -112,7 +107,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 mr-2 text-[#e74c3c]" />
-                <span>+47 123 45 678</span>
+                <span>+47 912 46 491</span>
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 mr-2 text-[#e74c3c]" />

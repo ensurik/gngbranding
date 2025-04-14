@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import Navbar from "@/components/Navbar";
@@ -25,7 +24,6 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Validere at påkrevde felt er utfylt
     if (!formData.name || !formData.email || !formData.message) {
       toast({
         title: "Manglende informasjon",
@@ -38,14 +36,13 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // Sender e-post via EmailJS
       const templateParams = {
         from_name: formData.name,
-        customer_mail: formData.email, // Endret fra from_email til customer_mail
+        customer_mail: formData.email,
         from_phone: formData.phone,
         from_company: formData.company,
         message: formData.message,
-        to_email: "kontakt@gngbranding.no" // Mottakers e-post
+        to_email: "kontakt@gngbranding.no"
       };
       
       const serviceID = "service_flil9f7";
@@ -54,7 +51,6 @@ const Contact = () => {
       
       await emailjs.send(serviceID, templateID, templateParams, userID);
       
-      // Tømme skjemaet
       setFormData({
         name: "",
         email: "",
@@ -63,7 +59,6 @@ const Contact = () => {
         message: ""
       });
       
-      // Vellykket innsending
       toast({
         title: "Melding sendt!",
         description: "Vi har mottatt din henvendelse og vil kontakte deg så snart som mulig.",
@@ -117,7 +112,7 @@ const Contact = () => {
                   <Phone className="h-6 w-6 text-brand-accent mr-4 mt-1" />
                   <div>
                     <h3 className="text-lg font-semibold text-brand-blue">Telefon</h3>
-                    <p className="text-brand-gray">+47 123 45 678</p>
+                    <p className="text-brand-gray">+47 912 46 491</p>
                   </div>
                 </div>
                 
