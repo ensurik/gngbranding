@@ -49,7 +49,6 @@ const Navbar = () => {
             </Link>
           </div>
           
-          {/* Desktop menu */}
           <div className="hidden md:flex items-center space-x-1">
             <NavLink to="/" isActive={isActive('/')}>
               Hjem
@@ -63,13 +62,12 @@ const Navbar = () => {
             <NavLink to="/contact" isActive={isActive('/contact')}>
               Kontakt
             </NavLink>
-            <a href="tel:+4712345678" className="ml-4 inline-flex items-center px-4 py-2 bg-[#0e1f33] text-white rounded-md hover:bg-[#0e1f33]/90 transition-all text-sm">
+            <a href="tel:+4791246491" className="ml-4 inline-flex items-center px-4 py-2 bg-[#0e1f33] text-white rounded-md hover:bg-[#0e1f33]/90 transition-all text-sm">
               <Phone className="mr-2 h-4 w-4" />
-              +47 123 45 678
+              +47 912 46 491
             </a>
           </div>
           
-          {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
             <button
               onClick={toggleMenu}
@@ -85,7 +83,6 @@ const Navbar = () => {
         </div>
       </div>
       
-      {/* Mobile menu */}
       {isMenuOpen && (
         <div className="md:hidden absolute w-full bg-white shadow-lg">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
@@ -102,9 +99,9 @@ const Navbar = () => {
               Kontakt
             </MobileNavLink>
             <div className="py-3">
-              <a href="tel:+4712345678" className="inline-flex items-center w-full px-4 py-2 bg-[#0e1f33] text-white rounded-md hover:bg-[#0e1f33]/90 transition-all text-sm">
+              <a href="tel:+4791246491" className="inline-flex items-center w-full px-4 py-2 bg-[#0e1f33] text-white rounded-md hover:bg-[#0e1f33]/90 transition-all text-sm">
                 <Phone className="mr-2 h-4 w-4" />
-                +47 123 45 678
+                +47 912 46 491
               </a>
             </div>
           </div>
@@ -114,7 +111,6 @@ const Navbar = () => {
   );
 };
 
-// Desktop Nav Link Component
 const NavLink = ({ to, isActive, children }: { to: string; isActive: boolean; children: React.ReactNode }) => {
   return (
     <Link 
@@ -130,7 +126,6 @@ const NavLink = ({ to, isActive, children }: { to: string; isActive: boolean; ch
   );
 };
 
-// Mobile Nav Link Component
 const MobileNavLink = ({ to, isActive, onClick, children }: { 
   to: string; 
   isActive: boolean; 
