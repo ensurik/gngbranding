@@ -4,6 +4,11 @@ import { Link } from "react-router-dom";
 import KalbakkenEngrosLogo from "@/assets/kalbakken-engros-logo.png";
 
 const FeaturedWork = () => {
+  // Helper function to scroll to top and navigate
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -33,6 +38,7 @@ const FeaturedWork = () => {
               <Link 
                 to="/portfolio/kalbakken-engros" 
                 className="inline-flex items-center text-brand-blue hover:text-brand-accent transition-colors"
+                onClick={scrollToTop}
               >
                 Se detaljer
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -44,7 +50,11 @@ const FeaturedWork = () => {
           <div className="bg-white rounded-lg overflow-hidden shadow-md group hover:shadow-xl transition-all duration-300">
             <div className="h-64 bg-gray-100 relative overflow-hidden">
               <div className="absolute inset-0 bg-brand-blue/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                <Link to="/contact" className="px-6 py-3 bg-white text-brand-blue font-medium rounded-md">
+                <Link 
+                  to="/contact" 
+                  className="px-6 py-3 bg-white text-brand-blue font-medium rounded-md"
+                  onClick={scrollToTop}
+                >
                   Kontakt oss
                 </Link>
               </div>
@@ -60,6 +70,7 @@ const FeaturedWork = () => {
               <Link 
                 to="/contact" 
                 className="inline-flex items-center text-brand-blue hover:text-brand-accent transition-colors"
+                onClick={scrollToTop}
               >
                 Kontakt oss
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -72,6 +83,7 @@ const FeaturedWork = () => {
           <Link 
             to="/portfolio" 
             className="inline-flex items-center justify-center px-8 py-4 bg-brand-blue text-white font-medium rounded-md hover:bg-brand-blue/90 transition-colors"
+            onClick={scrollToTop}
           >
             Se hele porteføljen
             <ArrowRight className="ml-2 h-5 w-5" />
