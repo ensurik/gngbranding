@@ -19,6 +19,11 @@ import Branding from "./pages/services/Branding";
 // Import portfolio project pages
 import KalbakkenEngrosProject from "./pages/portfolio/KalbakkenEngros";
 
+// Import legal pages
+import Personvern from "./pages/Personvern";
+import Cookies from "./pages/Cookies";
+import Vilkar from "./pages/Vilkar";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -41,6 +46,11 @@ const App = () => (
           <Route path="/tjenester/grafisk-design" element={<GraphicDesign />} />
           <Route path="/tjenester/digital-markedsføring" element={<DigitalMarketing />} />
           <Route path="/tjenester/merkevare" element={<Branding />} />
+          
+          {/* Legal routes */}
+          <Route path="/personvern" element={<Personvern />} />
+          <Route path="/cookies" element={<Cookies />} />
+          <Route path="/vilkar" element={<Vilkar />} />
           
           <Route path="*" element={<NotFound />} />
         </Routes>

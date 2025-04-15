@@ -1,7 +1,13 @@
+
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Clock, Shield, Award } from "lucide-react";
 
 const Footer = () => {
+  // Helper function to scroll to top when navigating
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <footer className="bg-[#0e1f33] text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -42,25 +48,25 @@ const Footer = () => {
               <h3 className="text-xl font-bold mb-4">Hurtiglenker</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link to="/" className="text-gray-300 hover:text-white transition-colors inline-flex items-center">
+                  <Link to="/" className="text-gray-300 hover:text-white transition-colors inline-flex items-center" onClick={scrollToTop}>
                     <span className="h-1 w-1 rounded-full bg-[#e74c3c] mr-2"></span>
                     Hjem
                   </Link>
                 </li>
                 <li>
-                  <Link to="/about" className="text-gray-300 hover:text-white transition-colors inline-flex items-center">
+                  <Link to="/about" className="text-gray-300 hover:text-white transition-colors inline-flex items-center" onClick={scrollToTop}>
                     <span className="h-1 w-1 rounded-full bg-[#e74c3c] mr-2"></span>
                     Om oss
                   </Link>
                 </li>
                 <li>
-                  <Link to="/portfolio" className="text-gray-300 hover:text-white transition-colors inline-flex items-center">
+                  <Link to="/portfolio" className="text-gray-300 hover:text-white transition-colors inline-flex items-center" onClick={scrollToTop}>
                     <span className="h-1 w-1 rounded-full bg-[#e74c3c] mr-2"></span>
                     Portefølje
                   </Link>
                 </li>
                 <li>
-                  <Link to="/contact" className="text-gray-300 hover:text-white transition-colors inline-flex items-center">
+                  <Link to="/contact" className="text-gray-300 hover:text-white transition-colors inline-flex items-center" onClick={scrollToTop}>
                     <span className="h-1 w-1 rounded-full bg-[#e74c3c] mr-2"></span>
                     Kontakt
                   </Link>
@@ -71,25 +77,25 @@ const Footer = () => {
               <h3 className="text-xl font-bold mb-4">Tjenester</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link to="/tjenester/webdesign" className="text-gray-300 hover:text-white transition-colors inline-flex items-center">
+                  <Link to="/tjenester/webdesign" className="text-gray-300 hover:text-white transition-colors inline-flex items-center" onClick={scrollToTop}>
                     <span className="h-1 w-1 rounded-full bg-[#e74c3c] mr-2"></span>
                     Webdesign
                   </Link>
                 </li>
                 <li>
-                  <Link to="/tjenester/grafisk-design" className="text-gray-300 hover:text-white transition-colors inline-flex items-center">
+                  <Link to="/tjenester/grafisk-design" className="text-gray-300 hover:text-white transition-colors inline-flex items-center" onClick={scrollToTop}>
                     <span className="h-1 w-1 rounded-full bg-[#e74c3c] mr-2"></span>
                     Grafisk Design
                   </Link>
                 </li>
                 <li>
-                  <Link to="/tjenester/digital-markedsføring" className="text-gray-300 hover:text-white transition-colors inline-flex items-center">
+                  <Link to="/tjenester/digital-markedsføring" className="text-gray-300 hover:text-white transition-colors inline-flex items-center" onClick={scrollToTop}>
                     <span className="h-1 w-1 rounded-full bg-[#e74c3c] mr-2"></span>
                     Digital Markedsføring
                   </Link>
                 </li>
                 <li>
-                  <Link to="/tjenester/merkevare" className="text-gray-300 hover:text-white transition-colors inline-flex items-center">
+                  <Link to="/tjenester/merkevare" className="text-gray-300 hover:text-white transition-colors inline-flex items-center" onClick={scrollToTop}>
                     <span className="h-1 w-1 rounded-full bg-[#e74c3c] mr-2"></span>
                     Merkevarebygging
                   </Link>
@@ -138,9 +144,9 @@ const Footer = () => {
               © {new Date().getFullYear()} GnGBranding. Alle rettigheter reservert.
             </p>
             <div className="flex space-x-4">
-              <Link to="/personvern" className="text-gray-300 hover:text-white text-sm">Personvern</Link>
-              <Link to="/cookies" className="text-gray-300 hover:text-white text-sm">Cookies</Link>
-              <Link to="/vilkar" className="text-gray-300 hover:text-white text-sm">Vilkår</Link>
+              <Link to="/personvern" className="text-gray-300 hover:text-white text-sm" onClick={scrollToTop}>Personvern</Link>
+              <Link to="/cookies" className="text-gray-300 hover:text-white text-sm" onClick={scrollToTop}>Cookies</Link>
+              <Link to="/vilkar" className="text-gray-300 hover:text-white text-sm" onClick={scrollToTop}>Vilkår</Link>
             </div>
           </div>
         </div>
