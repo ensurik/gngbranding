@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CallToAction from "@/components/CallToAction";
 import { ExternalLink } from "lucide-react";
+import KalbakkenEngrosLogo from "@/assets/kalbakken-engros-logo.png";
 
 const Portfolio = () => {
   const projects = [
@@ -12,7 +13,9 @@ const Portfolio = () => {
       description: "En fullstendig merkevarerenovering og ny nettside for Kalbakken Engros, en ledende grossist i Oslo-området. Prosjektet inkluderte ny visuell identitet, responsiv nettside og digital strategi.",
       challenges: "Kunden trengte en moderne digital tilstedeværelse som reflekterte deres etablerte posisjon i markedet samtidig som den appellerte til nye kunder.",
       solutions: "Vi utviklet en brukervennlig nettside med e-handelsløsning, integrert med deres lagersystem for sanntids lagerstatus. Den nye visuelle identiteten kombinerer tradisjon med moderne elementer.",
-      url: "https://kalbakkenengros.no"
+      url: "https://kalbakkenengros.no",
+      logo: KalbakkenEngrosLogo,
+      bgColor: "#9C2642"
     },
     {
       title: "Eksempel Prosjekt 2",
@@ -20,7 +23,9 @@ const Portfolio = () => {
       description: "Omfattende digital markedsføringskampanje for en lokal tjenesteleverandør, inkludert SoMe-strategi, innholdsproduksjon og målrettet annonsering.",
       challenges: "Kunden hadde begrenset synlighet i et konkurranseutsatt marked og trengte å øke bevisstheten om sine tjenester.",
       solutions: "Vi utviklet en komplett digital markedsføringsstrategi med fokus på lokal målretting, engasjerende innhold og konverteringsoptimalisert annonsering.",
-      url: "#"
+      url: "#",
+      logo: null,
+      bgColor: ""
     },
   ];
 
@@ -44,8 +49,19 @@ const Portfolio = () => {
           <div className="grid grid-cols-1 gap-16">
             {projects.map((project, index) => (
               <div key={index} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div className={`bg-brand-lightGray h-80 rounded-lg flex items-center justify-center ${index % 2 === 1 ? 'lg:order-last' : ''}`}>
-                  <span className="text-brand-blue text-xl font-semibold">{project.title}</span>
+                <div 
+                  className={`h-80 rounded-lg flex items-center justify-center p-6 ${index % 2 === 1 ? 'lg:order-last' : ''}`}
+                  style={{ backgroundColor: project.bgColor || '#f3f4f6' }}
+                >
+                  {project.logo ? (
+                    <img 
+                      src={project.logo} 
+                      alt={`${project.title} Logo`} 
+                      className="max-h-full max-w-full object-contain"
+                    />
+                  ) : (
+                    <span className="text-white text-xl font-semibold">{project.title}</span>
+                  )}
                 </div>
                 <div>
                   <span className="text-brand-accent font-medium mb-2 block">{project.category}</span>

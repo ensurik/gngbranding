@@ -17,17 +17,12 @@ const FeaturedWork = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
           {/* Featured Project 1 */}
           <div className="bg-white rounded-lg overflow-hidden shadow-md group hover:shadow-xl transition-all duration-300">
-            <div className="h-64 bg-gray-200 relative overflow-hidden flex items-center justify-center">
+            <div className="h-64 bg-[#9C2642] relative overflow-hidden flex items-center justify-center p-6">
               <img 
                 src={KalbakkenEngrosLogo} 
                 alt="Kalbakken Engros Logo" 
                 className="max-h-full max-w-full object-contain"
               />
-              <div className="absolute inset-0 bg-brand-blue/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                <Link to="/portfolio/kalbakken-engros" className="px-6 py-3 bg-white text-brand-blue font-medium rounded-md">
-                  Se prosjektet
-                </Link>
-              </div>
             </div>
             <div className="p-6">
               <h3 className="text-xl font-bold text-brand-blue mb-2">Kalbakken Engros</h3>
