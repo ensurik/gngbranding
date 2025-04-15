@@ -3,6 +3,11 @@ import { Globe, PenTool, Smartphone, Megaphone, ArrowRight, Award, Zap, Clock } 
 import { Link } from "react-router-dom";
 
 const Services = () => {
+  // Helper function to scroll to top when navigating
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+  
   const services = [
     {
       icon: <Globe className="h-16 w-16 text-[#0e1f33]" />,
@@ -86,6 +91,7 @@ const Services = () => {
                 <Link 
                   to={service.link}
                   className="inline-flex items-center text-[#0e1f33] font-medium hover:text-[#e74c3c] transition-colors"
+                  onClick={scrollToTop}
                 >
                   Les mer
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -112,6 +118,7 @@ const Services = () => {
               <Link 
                 to="/contact"
                 className="inline-flex items-center justify-center px-6 py-3 bg-[#0e1f33] text-white font-medium rounded-md hover:bg-[#0e1f33]/90 transition-colors"
+                onClick={scrollToTop}
               >
                 Få et uforpliktende tilbud
                 <ArrowRight className="ml-2 h-5 w-5" />
