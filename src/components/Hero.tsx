@@ -14,6 +14,11 @@ const Hero = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Helper function to scroll to top when navigating
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
@@ -111,11 +116,11 @@ const Hero = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 animate-fadeIn" style={{animationDelay: "0.4s"}}>
-              <Link to="/contact" className="inline-flex items-center justify-center px-6 py-4 bg-white text-[#0e1f33] font-medium rounded-md hover:bg-gray-100 transition-colors">
+              <Link to="/contact" onClick={scrollToTop} className="inline-flex items-center justify-center px-6 py-4 bg-white text-[#0e1f33] font-medium rounded-md hover:bg-gray-100 transition-colors">
                 Få et uforpliktende tilbud
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
-              <Link to="/portfolio" className="inline-flex items-center justify-center px-6 py-4 bg-transparent border border-white text-white font-medium rounded-md hover:bg-white/10 transition-colors">
+              <Link to="/portfolio" onClick={scrollToTop} className="inline-flex items-center justify-center px-6 py-4 bg-transparent border border-white text-white font-medium rounded-md hover:bg-white/10 transition-colors">
                 Se våre prosjekter
               </Link>
             </div>

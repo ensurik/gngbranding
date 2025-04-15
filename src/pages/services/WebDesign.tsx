@@ -7,6 +7,11 @@ import { Globe, Check, ArrowRight } from "lucide-react";
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from "@/components/ui/breadcrumb";
 
 const WebDesign = () => {
+  // Helper function to scroll to top when navigating
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
@@ -16,13 +21,13 @@ const WebDesign = () => {
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <Link to="/">Hjem</Link>
+                <Link to="/" onClick={scrollToTop}>Hjem</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <Link to="/">Tjenester</Link>
+                <Link to="/" onClick={scrollToTop}>Tjenester</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
@@ -41,10 +46,10 @@ const WebDesign = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild size="lg" className="bg-[#0e1f33] hover:bg-[#0e1f33]/90">
-                <Link to="/contact">Få et tilbud</Link>
+                <Link to="/contact" onClick={scrollToTop}>Få et tilbud</Link>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <Link to="/portfolio">Se våre prosjekter</Link>
+                <Link to="/portfolio" onClick={scrollToTop}>Se våre prosjekter</Link>
               </Button>
             </div>
           </div>
@@ -115,7 +120,7 @@ const WebDesign = () => {
             Ta kontakt med oss i dag for en uforpliktende samtale om hvordan vi kan hjelpe deg med å oppnå dine mål på nett.
           </p>
           <Button asChild size="lg" className="bg-[#0e1f33] hover:bg-[#0e1f33]/90">
-            <Link to="/contact" className="inline-flex items-center">
+            <Link to="/contact" className="inline-flex items-center" onClick={scrollToTop}>
               Få et tilbud nå
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>

@@ -1,4 +1,3 @@
-
 import { ArrowRight, Phone, Mail, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -14,6 +13,10 @@ const CallToAction = () => {
     service: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
