@@ -5,7 +5,7 @@ import { Star, Quote } from "lucide-react";
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Anders Johansen",
+      name: "Robin Singh",  // Changed from Anders Johansen
       company: "Kalbakken Engros",
       quote: "GnGBranding leverte en fantastisk nettside som har hjulpet oss med å tiltrekke nye kunder og øke salget betydelig. Hele prosessen var profesjonell og effektiv.",
       stars: 5,
@@ -79,3 +79,4 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
+
