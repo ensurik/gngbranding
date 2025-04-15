@@ -16,6 +16,9 @@ import GraphicDesign from "./pages/services/GraphicDesign";
 import DigitalMarketing from "./pages/services/DigitalMarketing";
 import Branding from "./pages/services/Branding";
 
+// Import portfolio project pages
+import KalbakkenEngrosProject from "./pages/portfolio/KalbakkenEngros";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -29,6 +32,9 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/portfolio" element={<Portfolio />} />
+          
+          {/* Portfolio project routes */}
+          <Route path="/portfolio/kalbakken-engros" element={<KalbakkenEngrosProject />} />
           
           {/* Service routes */}
           <Route path="/tjenester/webdesign" element={<WebDesign />} />
