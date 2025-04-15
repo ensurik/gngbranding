@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import CallToAction from "@/components/CallToAction";
 import { ExternalLink } from "lucide-react";
 import KalbakkenEngrosLogo from "@/assets/kalbakken-engros-logo.png";
+import { Link } from "react-router-dom";
 
 const Portfolio = () => {
   const projects = [
@@ -15,7 +16,8 @@ const Portfolio = () => {
       solutions: "Vi utviklet en brukervennlig nettside med e-handelsløsning, integrert med deres lagersystem for sanntids lagerstatus. Den nye visuelle identiteten kombinerer tradisjon med moderne elementer.",
       url: "https://kalbakkenengros.no",
       logo: KalbakkenEngrosLogo,
-      bgColor: "#9C2642"
+      bgColor: "#9C2642",
+      slug: "kalbakken-engros"
     },
     {
       title: "Eksempel Prosjekt 2",
@@ -25,7 +27,8 @@ const Portfolio = () => {
       solutions: "Vi utviklet en komplett digital markedsføringsstrategi med fokus på lokal målretting, engasjerende innhold og konverteringsoptimalisert annonsering.",
       url: "#",
       logo: null,
-      bgColor: ""
+      bgColor: "",
+      slug: ""
     },
   ];
 
@@ -60,7 +63,7 @@ const Portfolio = () => {
                       className="max-h-full max-w-full object-contain"
                     />
                   ) : (
-                    <span className="text-white text-xl font-semibold">{project.title}</span>
+                    <span className="text-gray-500 text-xl font-semibold">{project.title}</span>
                   )}
                 </div>
                 <div>
@@ -78,16 +81,40 @@ const Portfolio = () => {
                     <p className="text-brand-gray">{project.solutions}</p>
                   </div>
                   
-                  {project.url !== "#" && (
-                    <a 
-                      href={project.url} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-brand-blue hover:text-brand-accent transition-colors"
-                    >
-                      Besøk nettside
-                      <ExternalLink className="ml-2 h-4 w-4" />
-                    </a>
+                  {project.slug ? (
+                    <div className="flex space-x-4">
+                      <Link 
+                        to={`/portfolio/${project.slug}`}
+                        className="inline-flex items-center text-brand-blue hover:text-brand-accent transition-colors"
+                      >
+                        Se detaljer
+                        <ExternalLink className="ml-2 h-4 w-4" />
+                      </Link>
+                      
+                      {project.url !== "#" && (
+                        <a 
+                          href={project.url} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center text-brand-blue hover:text-brand-accent transition-colors"
+                        >
+                          Besøk nettside
+                          <ExternalLink className="ml-2 h-4 w-4" />
+                        </a>
+                      )}
+                    </div>
+                  ) : (
+                    project.url !== "#" && (
+                      <a 
+                        href={project.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-brand-blue hover:text-brand-accent transition-colors"
+                      >
+                        Besøk nettside
+                        <ExternalLink className="ml-2 h-4 w-4" />
+                      </a>
+                    )
                   )}
                 </div>
               </div>
