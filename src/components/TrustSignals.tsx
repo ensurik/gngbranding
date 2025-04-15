@@ -25,9 +25,9 @@ const TrustSignals = () => {
     }
   ];
 
-  // Legg til noen kjente merker som kunder har jobbet med
+  // Kun Kalbakken Engros som kunde
   const clients = [
-    "Norsk Hydro", "SpareBank 1", "Kalbakken Engros", "Oslo Kommune", "OBOS"
+    "Kalbakken Engros"
   ];
 
   return (
