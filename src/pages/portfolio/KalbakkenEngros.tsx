@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import CallToAction from "@/components/CallToAction";
 import { ExternalLink } from "lucide-react";
 import KalbakkenEngrosLogo from "@/assets/kalbakken-engros-logo.png";
+import { useEffect } from "react";
 
 const KalbakkenEngrosProject = () => {
   const project = {
@@ -15,6 +16,11 @@ const KalbakkenEngrosProject = () => {
     url: "https://kalbakkenengros.no",
     bgColor: "#9C2642"
   };
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="min-h-screen bg-white">
