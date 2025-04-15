@@ -5,29 +5,11 @@ import { Star, Quote } from "lucide-react";
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Robin Singh",  // Changed from Anders Johansen
+      name: "Robin Singh",
       company: "Kalbakken Engros",
       quote: "GnGBranding leverte en fantastisk nettside som har hjulpet oss med å tiltrekke nye kunder og øke salget betydelig. Hele prosessen var profesjonell og effektiv.",
       stars: 5,
-    },
-    {
-      name: "Lisa Hansen",
-      company: "Nordisk Design",
-      quote: "Profesjonelle, kreative og responsive. GnGBranding forstod våre behov og leverte en merkevare vi er stolte av. Vi har fått mange positive tilbakemeldinger.",
-      stars: 5,
-    },
-    {
-      name: "Morten Olsen",
-      company: "Tech Solutions AS",
-      quote: "Samarbeidet med GnGBranding har vært utrolig verdifullt for vår bedrift. Deres strategiske tilnærming til digital markedsføring har gitt oss konkrete resultater.",
-      stars: 4,
-    },
-    {
-      name: "Kari Nordmann",
-      company: "Karis Kafé",
-      quote: "GnGBranding hjalp oss med å fornye vår nettside og grafiske profil. Resultatet ble over all forventning, og vi ser allerede en økning i besøkende.",
-      stars: 5,
-    },
+    }
   ];
 
   return (
@@ -79,4 +61,3 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
-
