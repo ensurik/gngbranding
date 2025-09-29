@@ -2,7 +2,6 @@
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import emailjs from "emailjs-com";
 import { useToast } from "@/hooks/use-toast";
 
 const Hero = () => {
@@ -38,43 +37,14 @@ const Hero = () => {
     
     setIsSubmitting(true);
     
-    try {
-      const templateParams = {
-        from_name: formData.name,
-        customer_mail: formData.email,
-        service_type: formData.service,
-        type: "pricing_estimate",
-        to_email: "kontakt@gngbranding.no"
-      };
-      
-      const serviceID = "service_flil9f7";
-      const templateID = "template_2uuko0t";
-      const userID = "GZMZ6syWkL0Xv_7e7";
-      
-      await emailjs.send(serviceID, templateID, templateParams, userID);
-      
-      setFormData({
-        name: "",
-        email: "",
-        service: ""
-      });
-      
-      toast({
-        title: "Forespørsel sendt!",
-        description: "Vi har mottatt din forespørsel om et raskt prisestimat og vil kontakte deg så snart som mulig.",
-        duration: 5000,
-      });
-      
-    } catch (error) {
-      console.error("Feil ved sending av e-post:", error);
-      toast({
-        title: "Feil ved innsending",
-        description: "Det oppstod en feil ved sending av forespørselen. Vennligst prøv igjen senere.",
-        variant: "destructive"
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+    // Email functionality temporarily disabled - please contact directly
+    toast({
+      title: "Kontakt oss direkte",
+      description: "Vennligst kontakt oss på telefon +47 912 46 491 eller e-post kontakt@gngbranding.no",
+      duration: 5000,
+    });
+    
+    setIsSubmitting(false);
   };
 
   const benefits = [

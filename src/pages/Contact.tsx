@@ -3,7 +3,6 @@ import { useToast } from "@/hooks/use-toast";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Phone, Mail, Clock } from "lucide-react";
-import emailjs from "emailjs-com";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -35,46 +34,14 @@ const Contact = () => {
     
     setIsSubmitting(true);
     
-    try {
-      const templateParams = {
-        from_name: formData.name,
-        customer_mail: formData.email,
-        from_phone: formData.phone,
-        from_company: formData.company,
-        message: formData.message,
-        to_email: "kontakt@gngbranding.no"
-      };
-      
-      const serviceID = "service_flil9f7";
-      const templateID = "template_2uuko0t";
-      const userID = "GZMZ6syWkL0Xv_7e7";
-      
-      await emailjs.send(serviceID, templateID, templateParams, userID);
-      
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        company: "",
-        message: ""
-      });
-      
-      toast({
-        title: "Melding sendt!",
-        description: "Vi har mottatt din henvendelse og vil kontakte deg så snart som mulig.",
-        duration: 5000,
-      });
-      
-    } catch (error) {
-      console.error("Feil ved sending av e-post:", error);
-      toast({
-        title: "Feil ved innsending",
-        description: "Det oppstod en feil ved sending av meldingen. Vennligst prøv igjen senere eller kontakt oss direkte via telefon.",
-        variant: "destructive"
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+    // Email functionality temporarily disabled - please contact directly
+    toast({
+      title: "Kontakt oss direkte",
+      description: "Vennligst kontakt oss på telefon +47 912 46 491 eller e-post kontakt@gngbranding.no",
+      duration: 5000,
+    });
+    
+    setIsSubmitting(false);
   };
 
   return (
