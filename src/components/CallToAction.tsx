@@ -40,14 +40,14 @@ const CallToAction = () => {
     try {
       await emailjs.send(
         "service_x6861c4",
-        "YOUR_TEMPLATE_ID",
+        "template_upqsxeq",
         {
           from_name: formData.name,
           from_email: formData.email,
           phone: formData.phone,
           service: formData.service,
         },
-        "YOUR_PUBLIC_KEY"
+        "F2pCQAn1YJS8aF__h"
       );
       
       toast({
