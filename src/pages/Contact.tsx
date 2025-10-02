@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Phone, Mail, Clock } from "lucide-react";
 import emailjs from "emailjs-com";
+emailjs.init("F2pCQAn1YJS8aF__h");
 
 const Contact = () => {
   const { toast } = useToast();

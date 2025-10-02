@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import emailjs from "emailjs-com";
+emailjs.init("F2pCQAn1YJS8aF__h");
 
 const Hero = () => {
   const { toast } = useToast();
