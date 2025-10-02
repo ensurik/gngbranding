@@ -3,6 +3,7 @@ import { useToast } from "@/hooks/use-toast";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Phone, Mail, Clock } from "lucide-react";
+import emailjs from "emailjs-com";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -34,12 +35,40 @@ const Contact = () => {
     
     setIsSubmitting(true);
     
-    // Email functionality temporarily disabled - please contact directly
-    toast({
-      title: "Kontakt oss direkte",
-      description: "Vennligst kontakt oss på telefon +47 912 46 491 eller e-post kontakt@gngbranding.no",
-      duration: 5000,
-    });
+    try {
+      await emailjs.send(
+        "service_x6861c4",
+        "YOUR_TEMPLATE_ID",
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          message: formData.message,
+        },
+        "YOUR_PUBLIC_KEY"
+      );
+      
+      toast({
+        title: "Melding sendt!",
+        description: "Takk for din henvendelse. Vi kommer tilbake til deg så snart som mulig.",
+      });
+      
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        message: ""
+      });
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      toast({
+        title: "Noe gikk galt",
+        description: "Kunne ikke sende meldingen. Vennligst prøv igjen eller kontakt oss direkte.",
+        variant: "destructive"
+      });
+    }
     
     setIsSubmitting(false);
   };

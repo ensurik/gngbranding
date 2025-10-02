@@ -2,6 +2,7 @@ import { ArrowRight, Phone, Mail, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from "emailjs-com";
 
 const CallToAction = () => {
   const { toast } = useToast();
@@ -36,12 +37,38 @@ const CallToAction = () => {
     
     setIsSubmitting(true);
     
-    // Email functionality temporarily disabled - please contact directly
-    toast({
-      title: "Kontakt oss direkte",
-      description: "Vennligst kontakt oss på telefon +47 912 46 491 eller e-post kontakt@gngbranding.no",
-      duration: 5000,
-    });
+    try {
+      await emailjs.send(
+        "service_x6861c4",
+        "YOUR_TEMPLATE_ID",
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone,
+          service: formData.service,
+        },
+        "YOUR_PUBLIC_KEY"
+      );
+      
+      toast({
+        title: "Forespørsel sendt!",
+        description: "Takk! Vi kommer tilbake til deg snart.",
+      });
+      
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        service: ""
+      });
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      toast({
+        title: "Noe gikk galt",
+        description: "Kunne ikke sende forespørselen. Vennligst prøv igjen.",
+        variant: "destructive"
+      });
+    }
     
     setIsSubmitting(false);
   };
