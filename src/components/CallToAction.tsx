@@ -63,6 +63,7 @@ const CallToAction = () => {
       });
     } catch (error) {
       console.error("EmailJS error:", error);
+      console.error("EmailJS error details:", JSON.stringify(error, null, 2));
       toast({
         title: "Noe gikk galt",
         description: "Kunne ikke sende forespørselen. Vennligst prøv igjen.",
