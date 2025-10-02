@@ -3,7 +3,7 @@ import { useToast } from "@/hooks/use-toast";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Phone, Mail, Clock } from "lucide-react";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 emailjs.init("F2pCQAn1YJS8aF__h");
 
 const Contact = () => {
@@ -62,12 +62,13 @@ const Contact = () => {
         company: "",
         message: ""
       });
-    } catch (error) {
-      console.error("EmailJS error:", error);
-      console.error("EmailJS error details:", JSON.stringify(error, null, 2));
+    } catch (error: any) {
+      const origin = window.location.origin;
+      const errText = error?.text || error?.message || String(error);
+      console.error("EmailJS error:", error, "origin:", origin);
       toast({
         title: "Noe gikk galt",
-        description: "Kunne ikke sende meldingen. Vennligst prøv igjen eller kontakt oss direkte.",
+        description: `Feil: ${errText || "Ukjent feil"}. (Origin: ${origin})`,
         variant: "destructive"
       });
     }

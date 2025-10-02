@@ -2,7 +2,7 @@ import { ArrowRight, Phone, Mail, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 emailjs.init("F2pCQAn1YJS8aF__h");
 
 const CallToAction = () => {
@@ -62,12 +62,13 @@ const CallToAction = () => {
         phone: "",
         service: ""
       });
-    } catch (error) {
-      console.error("EmailJS error:", error);
-      console.error("EmailJS error details:", JSON.stringify(error, null, 2));
+    } catch (error: any) {
+      const origin = window.location.origin;
+      const errText = error?.text || error?.message || String(error);
+      console.error("EmailJS error:", error, "origin:", origin);
       toast({
         title: "Noe gikk galt",
-        description: "Kunne ikke sende forespørselen. Vennligst prøv igjen.",
+        description: `Feil: ${errText || "Ukjent feil"}. (Origin: ${origin})`,
         variant: "destructive"
       });
     }
