@@ -35,9 +35,9 @@ const About = () => {
       bio: "Gabriel er en ung gründer som brenner for design og små bedrifters potensial. Med kreativ tenkning og selvlært kompetanse innen grafisk design, startet han GnGBranding for å hjelpe lokale bedrifter med å løfte sin visuelle identitet.",
     },
     {
-      name: "Joachim Johansen",
-      title: "Medgrunnlegger & Strategisk Direktør",
-      bio: "Joachim har alltid vært interessert i markedsføring og digitale muligheter. Uten formell utdanning, men med stor pågangsmot, har han lært seg digitale markedsføringsstrategier gjennom praktisk erfaring og online kurs. Hans mål er å gjøre digital markedsføring tilgjengelig for mindre bedrifter.",
+      name: "Felix M Di Giacomo",
+      title: "Medgrunnlegger & Teknisk Direktør",
+      bio: "Felix studerer bachelor i Cybersikkerhet ved Kristiania og har en genuin interesse for teknologi og komplekse systemer. Gjennom studiet har han spesielt engasjert seg i etisk hacking, cyberforsvar og hvordan teknologi kan støtte forretningsmål. Med erfaring i Windows, Python, Java og Linux bidrar han med teknisk kompetanse og sikkerhetsfokus til GnGBranding.",
     },
   ];
 

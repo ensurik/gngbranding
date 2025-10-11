@@ -2,8 +2,7 @@ import { ArrowRight, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
-import emailjs from "@emailjs/browser";
-emailjs.init("F2pCQAn1YJS8aF__h");
+import { supabase } from "@/integrations/supabase/client";
 
 const Hero = () => {
   const { toast } = useToast();
@@ -39,16 +38,16 @@ const Hero = () => {
     setIsSubmitting(true);
     
     try {
-      await emailjs.send(
-        "service_x4x727l",
-        "template_upqsxeq",
-        {
-          from_name: formData.name,
-          from_email: formData.email,
+      const { error } = await supabase.functions.invoke('send-contact-email', {
+        body: {
+          name: formData.name,
+          email: formData.email,
           service: formData.service,
-        },
-        "F2pCQAn1YJS8aF__h"
-      );
+          type: 'hero'
+        }
+      });
+
+      if (error) throw error;
       
       toast({
         title: "Forespørsel sendt!",
@@ -61,17 +60,15 @@ const Hero = () => {
         service: ""
       });
     } catch (error: any) {
-      const origin = window.location.origin;
-      const errText = error?.text || error?.message || String(error);
-      console.error("EmailJS error:", error, "origin:", origin);
+      console.error("Error sending email:", error);
       toast({
         title: "Noe gikk galt",
-        description: `Feil: ${errText || "Ukjent feil"}. (Origin: ${origin})`,
+        description: "Vennligst prøv igjen senere.",
         variant: "destructive"
       });
+    } finally {
+      setIsSubmitting(false);
     }
-    
-    setIsSubmitting(false);
   };
 
   const benefits = [

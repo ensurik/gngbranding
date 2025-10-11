@@ -3,8 +3,7 @@ import { useToast } from "@/hooks/use-toast";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Phone, Mail, Clock } from "lucide-react";
-import emailjs from "@emailjs/browser";
-emailjs.init("F2pCQAn1YJS8aF__h");
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -37,18 +36,18 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      await emailjs.send(
-        "service_x4x727l",
-        "template_upqsxeq",
-        {
-          from_name: formData.name,
-          from_email: formData.email,
+      const { error } = await supabase.functions.invoke('send-contact-email', {
+        body: {
+          name: formData.name,
+          email: formData.email,
           phone: formData.phone,
           company: formData.company,
           message: formData.message,
-        },
-        "F2pCQAn1YJS8aF__h"
-      );
+          type: 'contact'
+        }
+      });
+
+      if (error) throw error;
       
       toast({
         title: "Melding sendt!",
@@ -63,17 +62,15 @@ const Contact = () => {
         message: ""
       });
     } catch (error: any) {
-      const origin = window.location.origin;
-      const errText = error?.text || error?.message || String(error);
-      console.error("EmailJS error:", error, "origin:", origin);
+      console.error("Error sending email:", error);
       toast({
         title: "Noe gikk galt",
-        description: `Feil: ${errText || "Ukjent feil"}. (Origin: ${origin})`,
+        description: "Vennligst prøv igjen senere.",
         variant: "destructive"
       });
+    } finally {
+      setIsSubmitting(false);
     }
-    
-    setIsSubmitting(false);
   };
 
   return (
