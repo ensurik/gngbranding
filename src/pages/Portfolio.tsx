@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import CallToAction from "@/components/CallToAction";
 import { ExternalLink } from "lucide-react";
 import KalbakkenEngrosLogo from "@/assets/kalbakken-engros-logo.png";
+import DBLydLysLogo from "@/assets/db-lyd-lys-logo.png";
 import { Link } from "react-router-dom";
 
 const Portfolio = () => {
@@ -20,15 +21,15 @@ const Portfolio = () => {
       slug: "kalbakken-engros"
     },
     {
-      title: "Eksempel Prosjekt 2",
-      category: "Digital Markedsføring",
-      description: "Omfattende digital markedsføringskampanje for en lokal tjenesteleverandør, inkludert SoMe-strategi, innholdsproduksjon og målrettet annonsering.",
-      challenges: "Kunden hadde begrenset synlighet i et konkurranseutsatt marked og trengte å øke bevisstheten om sine tjenester.",
-      solutions: "Vi utviklet en komplett digital markedsføringsstrategi med fokus på lokal målretting, engasjerende innhold og konverteringsoptimalisert annonsering.",
-      url: "#",
-      logo: null,
-      bgColor: "",
-      slug: ""
+      title: "DB Lyd & Lys",
+      category: "Webdesign & Digital Strategi",
+      description: "Komplett nettløsning for DB Lyd & Lys, et ledende russebuss og lydutstyr utleieselskap. Fra konsept til ferdig nettside med booking-funksjonalitet og moderne design.",
+      challenges: "Kunden hadde ikke nettsted fra før av og trengte en profesjonell digital tilstedeværelse for å nå ut til potensielle kunder og effektivisere bookingprosessen.",
+      solutions: "Vi bygget en komplett nettside fra bunnen av med intuitiv navigasjon, visuelt tiltalende design som reflekterer deres energiske merkevare, og et brukervennlig booking-system for utstyr og tjenester.",
+      url: "https://dblydoglys.no/",
+      logo: DBLydLysLogo,
+      bgColor: "#1a1a2e",
+      slug: "db-lyd-lys"
     },
   ];
 

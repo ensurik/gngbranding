@@ -18,6 +18,7 @@ import Branding from "./pages/services/Branding";
 
 // Import portfolio project pages
 import KalbakkenEngrosProject from "./pages/portfolio/KalbakkenEngros";
+import DBLydLysProject from "./pages/portfolio/DBLydLys";
 
 // Import legal pages
 import Personvern from "./pages/Personvern";
@@ -40,6 +41,7 @@ const App = () => (
           
           {/* Portfolio project routes */}
           <Route path="/portfolio/kalbakken-engros" element={<KalbakkenEngrosProject />} />
+          <Route path="/portfolio/db-lyd-lys" element={<DBLydLysProject />} />
           
           {/* Service routes */}
           <Route path="/tjenester/webdesign" element={<WebDesign />} />

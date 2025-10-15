@@ -9,6 +9,12 @@ const Testimonials = () => {
       company: "Kalbakken Engros",
       quote: "GnGBranding leverte en fantastisk nettside som har hjulpet oss med å tiltrekke nye kunder og øke salget betydelig. Hele prosessen var profesjonell og effektiv.",
       stars: 5,
+    },
+    {
+      name: "Mathias Berg",
+      company: "DB Lyd & Lys",
+      quote: "Vi hadde ikke nettside fra før, og GnGBranding gjorde hele prosessen enkel og grei. De forstod vår visjon med en gang og leverte en moderne nettside som virkelig representerer vår merkevare. Bookingsystemet fungerer perfekt, og vi har fått mange flere henvendelser siden lanseringen.",
+      stars: 5,
     }
   ];
 

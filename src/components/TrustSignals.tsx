@@ -25,9 +25,9 @@ const TrustSignals = () => {
     }
   ];
 
-  // Kun Kalbakken Engros som kunde
   const clients = [
-    "Kalbakken Engros"
+    "Kalbakken Engros",
+    "DB Lyd & Lys"
   ];
 
   return (
