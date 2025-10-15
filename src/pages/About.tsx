@@ -58,22 +58,17 @@ const About = () => {
       {/* Our Story */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-brand-blue mb-6">Vår Historie</h2>
-              <p className="text-brand-gray mb-4">
-                GnGBranding ble startet av Gabriel Milinkovic og Joachim Johansen med en klar visjon: å hjelpe både store og små bedrifter med å digitalisere sine produkter og tjenester for å nå et større marked.
-              </p>
-              <p className="text-brand-gray mb-4">
-                I en tid der digital tilstedeværelse blir stadig viktigere, så vi et behov for å tilby skreddersydde digitale løsninger som faktisk gir resultater. Vi startet med enkle prosjekter for lokale bedrifter, og har gradvis bygget opp vår kompetanse og portefølje.
-              </p>
-              <p className="text-brand-gray">
-                I dag fokuserer vi på å kombinere kreativ design med strategisk markedsføring for å hjelpe våre kunder med å skape sterke digitale identiteter som skiller seg ut i markedet og driver vekst. Vår styrke ligger i vår evne til å forstå hver enkelt bedrifts unike behov og utfordringer.
-              </p>
-            </div>
-            <div className="bg-brand-lightGray h-96 rounded-lg flex items-center justify-center">
-              <span className="text-brand-blue text-xl font-semibold">Teamet vårt i aksjon</span>
-            </div>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-brand-blue mb-6">Vår Historie</h2>
+            <p className="text-brand-gray mb-4">
+              GnGBranding ble startet av Gabriel Milinkovic og Joachim Johansen med en klar visjon: å hjelpe både store og små bedrifter med å digitalisere sine produkter og tjenester for å nå et større marked.
+            </p>
+            <p className="text-brand-gray mb-4">
+              I en tid der digital tilstedeværelse blir stadig viktigere, så vi et behov for å tilby skreddersydde digitale løsninger som faktisk gir resultater. Vi startet med enkle prosjekter for lokale bedrifter, og har gradvis bygget opp vår kompetanse og portefølje.
+            </p>
+            <p className="text-brand-gray">
+              I dag fokuserer vi på å kombinere kreativ design med strategisk markedsføring for å hjelpe våre kunder med å skape sterke digitale identiteter som skiller seg ut i markedet og driver vekst. Vår styrke ligger i vår evne til å forstå hver enkelt bedrifts unike behov og utfordringer.
+            </p>
           </div>
         </div>
       </section>
