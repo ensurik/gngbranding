@@ -1,8 +1,8 @@
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
+import emailjs from '@emailjs/browser';
 
 const Hero = () => {
   const { toast } = useToast();
@@ -12,6 +12,10 @@ const Hero = () => {
     service: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  useEffect(() => {
+    emailjs.init("PQTe6SGXpou8W6YTI");
+  }, []);
 
   // Helper function to scroll to top when navigating
   const scrollToTop = () => {
@@ -38,16 +42,16 @@ const Hero = () => {
     setIsSubmitting(true);
     
     try {
-      const { error } = await supabase.functions.invoke('send-contact-email', {
-        body: {
-          name: formData.name,
-          email: formData.email,
+      await emailjs.send(
+        'service_kjnubtl',
+        'template_hmsykol',
+        {
+          from_name: formData.name,
+          from_email: formData.email,
           service: formData.service,
           type: 'hero'
         }
-      });
-
-      if (error) throw error;
+      );
       
       toast({
         title: "Forespørsel sendt!",

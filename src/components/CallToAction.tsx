@@ -1,8 +1,8 @@
 import { ArrowRight, Phone, Mail, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
+import emailjs from '@emailjs/browser';
 
 const CallToAction = () => {
   const { toast } = useToast();
@@ -13,6 +13,10 @@ const CallToAction = () => {
     service: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  useEffect(() => {
+    emailjs.init("PQTe6SGXpou8W6YTI");
+  }, []);
   
   const scrollToTop = () => {
     window.scrollTo(0, 0);
@@ -38,17 +42,17 @@ const CallToAction = () => {
     setIsSubmitting(true);
     
     try {
-      const { error } = await supabase.functions.invoke('send-contact-email', {
-        body: {
-          name: formData.name,
-          email: formData.email,
+      await emailjs.send(
+        'service_kjnubtl',
+        'template_hmsykol',
+        {
+          from_name: formData.name,
+          from_email: formData.email,
           phone: formData.phone,
           service: formData.service,
           type: 'cta'
         }
-      });
-
-      if (error) throw error;
+      );
       
       toast({
         title: "Forespørsel sendt!",

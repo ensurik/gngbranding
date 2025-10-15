@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Phone, Mail, Clock } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const { toast } = useToast();
@@ -15,6 +15,10 @@ const Contact = () => {
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  useEffect(() => {
+    emailjs.init("PQTe6SGXpou8W6YTI");
+  }, []);
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -36,18 +40,18 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      const { error } = await supabase.functions.invoke('send-contact-email', {
-        body: {
-          name: formData.name,
-          email: formData.email,
+      await emailjs.send(
+        'service_kjnubtl',
+        'template_hmsykol',
+        {
+          from_name: formData.name,
+          from_email: formData.email,
           phone: formData.phone,
           company: formData.company,
           message: formData.message,
           type: 'contact'
         }
-      });
-
-      if (error) throw error;
+      );
       
       toast({
         title: "Melding sendt!",
