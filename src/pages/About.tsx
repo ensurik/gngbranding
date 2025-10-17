@@ -2,7 +2,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CallToAction from "@/components/CallToAction";
-import { CheckCircle, Users, TrendingUp, Award } from "lucide-react";
+import { CheckCircle, Users, TrendingUp, Award, Linkedin } from "lucide-react";
 
 const About = () => {
   const values = [
@@ -35,9 +35,10 @@ const About = () => {
       bio: "Gabriel er en ung gründer som brenner for design og små bedrifters potensial. Med kreativ tenkning og selvlært kompetanse innen grafisk design, startet han GnGBranding for å hjelpe lokale bedrifter med å løfte sin visuelle identitet.",
     },
     {
-      name: "Felix M Di Giacomo",
+      name: "Felix M Di Giacomo Kristoffersen",
       title: "Medgrunnlegger & Teknisk Direktør",
       bio: "Felix studerer bachelor i Cybersikkerhet ved Kristiania og har en genuin interesse for teknologi og komplekse systemer. Gjennom studiet har han spesielt engasjert seg i etisk hacking, cyberforsvar og hvordan teknologi kan støtte forretningsmål. Med erfaring i Windows, Python, Java og Linux bidrar han med teknisk kompetanse og sikkerhetsfokus til GnGBranding.",
+      linkedin: "https://no.linkedin.com/in/felixmdgk/no",
     },
   ];
 
@@ -61,7 +62,7 @@ const About = () => {
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-brand-blue mb-6">Vår Historie</h2>
             <p className="text-brand-gray mb-4">
-              GnGBranding ble startet av Gabriel Milinkovic og Joachim Johansen med en klar visjon: å hjelpe både store og små bedrifter med å digitalisere sine produkter og tjenester for å nå et større marked.
+              GnGBranding ble startet av Gabriel Milinkovic og Felix M Di Giacomo Kristoffersen med en klar visjon: å hjelpe både store og små bedrifter med å digitalisere sine produkter og tjenester for å nå et større marked.
             </p>
             <p className="text-brand-gray mb-4">
               I en tid der digital tilstedeværelse blir stadig viktigere, så vi et behov for å tilby skreddersydde digitale løsninger som faktisk gir resultater. Vi startet med enkle prosjekter for lokale bedrifter, og har gradvis bygget opp vår kompetanse og portefølje.
@@ -112,7 +113,19 @@ const About = () => {
                   <span className="text-brand-blue font-bold">{member.name.charAt(0)}</span>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-brand-blue mb-1 text-center md:text-left">{member.name}</h3>
+                  <div className="flex items-center gap-2 justify-center md:justify-start mb-1">
+                    <h3 className="text-xl font-bold text-brand-blue">{member.name}</h3>
+                    {member.linkedin && (
+                      <a
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-brand-blue hover:text-brand-accent transition-colors"
+                      >
+                        <Linkedin className="h-5 w-5" />
+                      </a>
+                    )}
+                  </div>
                   <p className="text-brand-accent mb-4 text-center md:text-left">{member.title}</p>
                   <p className="text-brand-gray">{member.bio}</p>
                 </div>
