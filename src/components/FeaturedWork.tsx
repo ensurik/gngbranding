@@ -15,7 +15,7 @@ const FeaturedWork = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <span className="inline-block text-brand-accent font-semibold text-sm uppercase tracking-wider mb-2">Portefølje</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-blue mb-4">Utvalgte Prosjekter</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-brand-blue mb-4">Våre Nyeste Prosjekter</h2>
           <p className="text-lg text-brand-gray max-w-3xl mx-auto">
             Ta en titt på noen av våre nyeste prosjekter der vi har hjulpet kunder med å styrke deres digitale tilstedeværelse.
           </p>

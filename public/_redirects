@@ -1,0 +1,6 @@
+# Redirect non-www to www
+https://gngbranding.com/* https://www.gngbranding.com/:splat 301!
+http://gngbranding.com/* https://www.gngbranding.com/:splat 301!
+
+# Force HTTPS
+http://www.gngbranding.com/* https://www.gngbranding.com/:splat 301!

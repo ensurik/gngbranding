@@ -62,7 +62,7 @@ const Services = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <span className="inline-block text-[#e74c3c] font-semibold text-sm uppercase tracking-wider mb-2">Våre tjenester</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#0e1f33] mb-4">Hva vi kan hjelpe deg med</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#0e1f33] mb-4">Våre Tjenester og Ekspertise</h2>
           <p className="text-lg text-brand-gray max-w-3xl mx-auto">
             Vi tilbyr et bredt spekter av tjenester for å hjelpe din bedrift med å bygge et sterkt digitalt nærvær som skaper resultater.
           </p>
