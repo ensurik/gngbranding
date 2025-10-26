@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import About from "./pages/About";
@@ -33,32 +33,30 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          
-          {/* Portfolio project routes */}
-          <Route path="/portfolio/kalbakken-engros" element={<KalbakkenEngrosProject />} />
-          <Route path="/portfolio/db-lyd-lys" element={<DBLydLysProject />} />
-          
-          {/* Service routes */}
-          <Route path="/tjenester/webdesign" element={<WebDesign />} />
-          <Route path="/tjenester/grafisk-design" element={<GraphicDesign />} />
-          <Route path="/tjenester/digital-markedsføring" element={<DigitalMarketing />} />
-          <Route path="/tjenester/merkevare" element={<Branding />} />
-          
-          {/* Legal routes */}
-          <Route path="/personvern" element={<Personvern />} />
-          <Route path="/cookies" element={<Cookies />} />
-          <Route path="/vilkar" element={<Vilkar />} />
-          
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        
+        {/* Portfolio project routes */}
+        <Route path="/portfolio/kalbakken-engros" element={<KalbakkenEngrosProject />} />
+        <Route path="/portfolio/db-lyd-lys" element={<DBLydLysProject />} />
+        
+        {/* Service routes */}
+        <Route path="/tjenester/webdesign" element={<WebDesign />} />
+        <Route path="/tjenester/grafisk-design" element={<GraphicDesign />} />
+        <Route path="/tjenester/digital-markedsføring" element={<DigitalMarketing />} />
+        <Route path="/tjenester/merkevare" element={<Branding />} />
+        
+        {/* Legal routes */}
+        <Route path="/personvern" element={<Personvern />} />
+        <Route path="/cookies" element={<Cookies />} />
+        <Route path="/vilkar" element={<Vilkar />} />
+        
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </TooltipProvider>
   </QueryClientProvider>
 );
