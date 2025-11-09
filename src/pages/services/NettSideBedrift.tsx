@@ -1,5 +1,6 @@
 import { ArrowRight, CheckCircle, Building2, Shield, Headphones, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -8,6 +9,55 @@ const NettSideBedrift = () => {
   const scrollToTop = () => {
     window.scrollTo(0, 0);
   };
+
+  useEffect(() => {
+    // Add FAQ structured data
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Hva koster det å lage nettside for bedrift?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Prisen for en bedriftsnettside starter fra 15.000 kr for en grunnleggende presentasjonsnettside, og fra 30.000 kr for mer avanserte løsninger med tilpasset funksjonalitet. Vi gir alltid et skreddersydd tilbud basert på dine behov."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Er nettsiden GDPR-sikker?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, alle våre nettsider er GDPR-sikre og i henhold til personvernlovgivningen. Vi inkluderer personvernerklæring, cookiepolicy, brukervilkår og sikker lagring av kundedata."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hvor lang tid tar det å lage en nettside for bedrift?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Du får en gratis demo på 1 uke, og en ferdig nettside er typisk klar innen 2-4 uker avhengig av kompleksitet og funksjonalitet. Vi holder deg oppdatert gjennom hele prosessen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Får jeg support etter lansering?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, alle våre nettsider inkluderer 3 måneders gratis support etter lansering. Vi hjelper deg med oppdateringer, feilretting og spørsmål du måtte ha."
+          }
+        }
+      ]
+    });
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
 
   const features = [
     {

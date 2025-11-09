@@ -1,5 +1,6 @@
 import { ArrowRight, CheckCircle, Package, Zap, Star } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -8,6 +9,47 @@ const NettbutikkPris = () => {
   const scrollToTop = () => {
     window.scrollTo(0, 0);
   };
+
+  useEffect(() => {
+    // Add FAQ structured data
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Hva påvirker prisen på en nettbutikk?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Prisen avhenger av antall produkter, tilpasset design, spesielle funksjoner, integrasjoner og kompleksiteten i nettbutikken. Vi gir alltid et transparent pristilbud basert på dine behov."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Er det månedlige kostnader etter lansering?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, det er løpende kostnader for hosting, domene og betalingsløsning (typisk 500-2000 kr per måned). Vedlikehold og support er valgfritt fra 1.500 kr per måned."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hvor lang tid tar det å lage en nettbutikk?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En grunnleggende nettbutikk kan være klar på 1-2 uker. Større og mer komplekse prosjekter kan ta 4-8 uker. Du får alltid en gratis demo etter 1 uke."
+          }
+        }
+      ]
+    });
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
 
   const pricingTiers = [
     {

@@ -1,5 +1,6 @@
 import { ArrowRight, CheckCircle, Search, TrendingUp, Target, BarChart } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -8,6 +9,55 @@ const SEONettside = () => {
   const scrollToTop = () => {
     window.scrollTo(0, 0);
   };
+
+  useEffect(() => {
+    // Add FAQ structured data
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Hvordan få nettsiden på Google?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For å få nettsiden på Google må du optimalisere den for søkemotorer (SEO). Dette inkluderer teknisk SEO, innholdsoptimalisering, mobiloptimalisering, god hastighet og relevante nøkkelord. Vi hjelper deg med komplett SEO-optimalisering."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hva er en god nettside?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En god nettside er rask og brukervennlig, mobiloptimalisert, SEO-optimalisert for Google, sikker med HTTPS, har relevant og godt innhold, og er designet for konvertering. Den må også være GDPR-sikker."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hvor lang tid tar SEO-optimalisering?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Grunnleggende SEO-optimalisering tar 2-4 uker å implementere. Resultater i form av bedre ranking på Google sees typisk etter 2-3 måneder, men det varierer basert på konkurranse og bransje."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hva koster SEO-optimalisering av nettside?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SEO-optimalisering starter fra 10.000 kr for grunnleggende optimalisering. Løpende SEO-tjenester starter fra 5.000 kr per måned. Prisen avhenger av nettsidens størrelse og konkurransenivået i din bransje."
+          }
+        }
+      ]
+    });
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
 
   const seoServices = [
     {
