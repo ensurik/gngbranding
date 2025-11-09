@@ -12,8 +12,8 @@ const Services = () => {
     {
       icon: <Globe className="h-16 w-16 text-[#0e1f33]" />,
       title: "Nettsider & Nettbutikker",
-      description: "Vi lager profesjonelle nettsider og nettbutikker tilpasset din bedrift. Gratis demo på 1 uke - helt uforpliktende. Moderne design som konverterer besøkende til kunder.",
-      benefits: ["Gratis demo", "Ferdig på 1 uke", "SEO-optimalisert", "Mobilvennlig"],
+      description: "Vi designer og utvikler skreddersydde nettsider og komplette nettbutikker. Fra enkle presentasjonssider til avanserte e-handelsløsninger med betalingsintegrasjon og produktkatalog.",
+      benefits: ["Gratis demo", "Rask leveringstid", "SEO-optimalisert", "Mobilvennlig"],
       link: "/tjenester/webdesign"
     },
     {
@@ -33,8 +33,8 @@ const Services = () => {
     {
       icon: <Megaphone className="h-16 w-16 text-[#0e1f33]" />,
       title: "Nettside for Bedrifter",
-      description: "Skreddersydde nettside-løsninger for bedrifter. Vi bygger nettsider som styrker din merkevare og gir din bedrift et profesjonelt digitalt nærvær.",
-      benefits: ["Bedriftstilpasset", "GDPR-sikker", "Profesjonell support"],
+      description: "Profesjonelle bedriftsnettsider med GDPR-sikkerhet, dedikert support og langsiktig vedlikehold. Vi sikrer at din bedrift får en trygg og pålitelig digital plattform.",
+      benefits: ["Gratis demo", "Mobilvennlig", "GDPR-sikker", "Rask leveringstid"],
       link: "/tjenester/nettside-bedrift"
     },
   ];
