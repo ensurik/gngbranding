@@ -76,9 +76,10 @@ const Hero = () => {
   };
 
   const benefits = [
-    "Profesjonell design som konverterer besøkende til kunder",
-    "Komplett merkevarebygging fra logo til digital strategi",
-    "Skreddersydde løsninger tilpasset ditt budsjett",
+    "Gratis demo av din nye nettside - helt uforpliktende",
+    "Ferdig nettside eller nettbutikk på kun 1 uke",
+    "Moderne, responsivt design som konverterer besøkende til kunder",
+    "SEO-optimalisert for høyere ranking på Google",
     "Gratis oppfølging i 3 måneder etter lansering"
   ];
 
@@ -96,10 +97,10 @@ const Hero = () => {
               <img src="/lovable-uploads/a2a7ebd8-4472-46d5-b442-47bc4d9d980c.png" alt="GnG Branding Logo" className="h-16 md:h-20" />
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight animate-fadeIn">
-              Profesjonell <span className="text-white/90">webdesign</span> og <span className="text-white/90">merkevarebygging</span>
+              Vi lager profesjonelle <span className="text-white/90">nettsider</span> og <span className="text-white/90">nettbutikker</span> for din bedrift
             </h1>
             <p className="text-xl md:text-2xl mb-6 text-gray-100 max-w-xl animate-fadeIn" style={{animationDelay: "0.2s"}}>
-              Vi hjelper din bedrift med å skape en sterk digital tilstedeværelse som konverterer besøkende til kunder.
+              Få en gratis demo av din nye nettside på 1 uke - helt uforpliktende. Vi leverer moderne, SEO-optimaliserte nettsider som gir resultater.
             </p>
             
             <div className="mb-8 animate-fadeIn" style={{animationDelay: "0.3s"}}>
@@ -115,11 +116,11 @@ const Hero = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 animate-fadeIn" style={{animationDelay: "0.4s"}}>
               <Link to="/contact" onClick={scrollToTop} className="inline-flex items-center justify-center px-6 py-4 bg-white text-[#0e1f33] font-medium rounded-md hover:bg-gray-100 transition-colors">
-                Få et uforpliktende tilbud
+                Få gratis demo på 1 uke
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
               <Link to="/portfolio" onClick={scrollToTop} className="inline-flex items-center justify-center px-6 py-4 bg-transparent border border-white text-white font-medium rounded-md hover:bg-white/10 transition-colors">
-                Se våre prosjekter
+                Se våre nettsider
               </Link>
             </div>
           </div>
@@ -156,9 +157,11 @@ const Hero = () => {
                     className="w-full px-4 py-2 rounded bg-white/20 border border-white/30 text-white focus:outline-none focus:ring-2 focus:ring-white/50"
                   >
                     <option value="" className="text-gray-800">Velg tjeneste</option>
+                    <option value="nettside" className="text-gray-800">Ny nettside</option>
+                    <option value="nettbutikk" className="text-gray-800">Nettbutikk</option>
                     <option value="webdesign" className="text-gray-800">Webdesign</option>
-                    <option value="branding" className="text-gray-800">Merkevarebygging</option>
-                    <option value="marketing" className="text-gray-800">Digital Markedsføring</option>
+                    <option value="seo" className="text-gray-800">SEO-optimalisering</option>
+                    <option value="redesign" className="text-gray-800">Redesign av eksisterende nettside</option>
                   </select>
                 </div>
                 <button 

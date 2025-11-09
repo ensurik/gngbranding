@@ -16,6 +16,9 @@ import WebDesign from "./pages/services/WebDesign";
 import GraphicDesign from "./pages/services/GraphicDesign";
 import DigitalMarketing from "./pages/services/DigitalMarketing";
 import Branding from "./pages/services/Branding";
+import NettbutikkPris from "./pages/services/NettbutikkPris";
+import SEONettside from "./pages/services/SEONettside";
+import NettSideBedrift from "./pages/services/NettSideBedrift";
 
 // Import portfolio project pages
 import KalbakkenEngrosProject from "./pages/portfolio/KalbakkenEngros";
@@ -49,6 +52,9 @@ const App = () => (
         <Route path="/tjenester/grafisk-design" element={<GraphicDesign />} />
         <Route path="/tjenester/digital-markedsføring" element={<DigitalMarketing />} />
         <Route path="/tjenester/merkevare" element={<Branding />} />
+        <Route path="/tjenester/nettside-pris" element={<NettbutikkPris />} />
+        <Route path="/tjenester/seo-nettside" element={<SEONettside />} />
+        <Route path="/tjenester/nettside-bedrift" element={<NettSideBedrift />} />
         
         {/* Legal routes */}
         <Route path="/personvern" element={<Personvern />} />

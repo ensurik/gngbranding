@@ -78,9 +78,9 @@ const CallToAction = () => {
   };
 
   const benefits = [
-    "Få en profesjonell nettside som konverterer besøkende til kunder",
-    "Bygg en sterk merkevare som skiller deg ut i markedet",
-    "Øk din synlighet på nett og nå flere potensielle kunder",
+    "Få en gratis demo av din nye nettside - helt uforpliktende",
+    "Profesjonell nettside eller nettbutikk ferdig på kun 1 uke",
+    "SEO-optimalisert for høyere ranking på Google",
     "Gratis oppfølging i 3 måneder etter lansering"
   ];
 
@@ -91,10 +91,10 @@ const CallToAction = () => {
           <div className="px-6 py-12 md:py-16 md:px-12 flex flex-col md:flex-row items-center justify-between">
             <div className="md:w-7/12 mb-8 md:mb-0 text-center md:text-left">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Klar til å ta din merkevare til neste nivå?
+                Klar til å få din nye nettside?
               </h2>
               <p className="text-lg text-gray-200 mb-6 max-w-3xl">
-                La oss hjelpe deg med å skape en sterk digital tilstedeværelse som tiltrekker kunder og driver vekst.
+                Få en gratis demo på 1 uke og se hvordan din nettside kan se ut - helt uforpliktende.
               </p>
               
               <ul className="space-y-2 mb-6 max-w-md mx-auto md:mx-0">
@@ -165,9 +165,11 @@ const CallToAction = () => {
                       className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#0e1f33]/50"
                     >
                       <option value="">Velg tjeneste</option>
+                      <option value="nettside">Ny nettside</option>
+                      <option value="nettbutikk">Nettbutikk</option>
                       <option value="webdesign">Webdesign</option>
-                      <option value="branding">Merkevarebygging</option>
-                      <option value="marketing">Digital Markedsføring</option>
+                      <option value="seo">SEO-optimalisering</option>
+                      <option value="redesign">Redesign av eksisterende nettside</option>
                     </select>
                   </div>
                   <button 

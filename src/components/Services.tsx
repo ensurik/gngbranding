@@ -11,31 +11,31 @@ const Services = () => {
   const services = [
     {
       icon: <Globe className="h-16 w-16 text-[#0e1f33]" />,
-      title: "Webdesign",
-      description: "Vi utvikler responsive, brukervennlige og estetisk tiltalende nettsider som reflekterer din merkevare og konverterer besøkende til kunder.",
-      benefits: ["SEO-optimalisert", "Mobilvennlig", "Rask og sikker"],
+      title: "Nettsider & Nettbutikker",
+      description: "Vi lager profesjonelle nettsider og nettbutikker tilpasset din bedrift. Gratis demo på 1 uke - helt uforpliktende. Moderne design som konverterer besøkende til kunder.",
+      benefits: ["Gratis demo", "Ferdig på 1 uke", "SEO-optimalisert", "Mobilvennlig"],
       link: "/tjenester/webdesign"
     },
     {
+      icon: <Smartphone className="h-16 w-16 text-[#0e1f33]" />,
+      title: "SEO & Optimalisering",
+      description: "Få nettsiden din på Google. Vi optimaliserer nettsider for søkemotorer slik at din bedrift blir funnet av de rette kundene når de søker etter dine tjenester.",
+      benefits: ["Høyere ranking", "Mer trafikk", "Økt synlighet"],
+      link: "/tjenester/seo-nettside"
+    },
+    {
       icon: <PenTool className="h-16 w-16 text-[#0e1f33]" />,
-      title: "Grafisk Design",
-      description: "Fra logoer til markedsføringsmateriell – vi skaper visuell identitet som forsterker din bedrifts budskap og gjør deg gjenkjennelig i markedet.",
-      benefits: ["Unik logo", "Konsistent design", "Print & digitalt"],
+      title: "Design & Innholdsproduksjon",
+      description: "Vi produserer profesjonelt innhold til nettsiden din - fra tekster og bilder til videoer og grafisk design som engasjerer dine besøkende.",
+      benefits: ["Profesjonelt design", "Skreddersydd innhold", "Konsistent uttrykk"],
       link: "/tjenester/grafisk-design"
     },
     {
-      icon: <Smartphone className="h-16 w-16 text-[#0e1f33]" />,
-      title: "Digital Markedsføring",
-      description: "Vi hjelper deg å nå ditt publikum gjennom målrettet digital markedsføring, søkemotoroptimalisering og sosiale mediestrategier.",
-      benefits: ["Google-annonsering", "SoMe-strategi", "Konverteringsøkning"],
-      link: "/tjenester/digital-markedsføring"
-    },
-    {
       icon: <Megaphone className="h-16 w-16 text-[#0e1f33]" />,
-      title: "Merkevarebygging",
-      description: "Vi utvikler helhetlige merkevarestrategier som differensierer din bedrift i et konkurranseutsatt marked og bygger langsiktig kundelojalitet.",
-      benefits: ["Merkevarestrategi", "Posisjonering", "Merkeverdier"],
-      link: "/tjenester/merkevare"
+      title: "Nettside for Bedrifter",
+      description: "Skreddersydde nettside-løsninger for bedrifter. Vi bygger nettsider som styrker din merkevare og gir din bedrift et profesjonelt digitalt nærvær.",
+      benefits: ["Bedriftstilpasset", "GDPR-sikker", "Profesjonell support"],
+      link: "/tjenester/nettside-bedrift"
     },
   ];
   
