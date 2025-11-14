@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CallToAction from "@/components/CallToAction";
 import MyklegullLogo from "@/assets/myklegull-logo.jpg";
+import { ExternalLink } from "lucide-react";
 
 const MyklegullPoleringProject = () => {
   const project = {
@@ -12,6 +13,7 @@ const MyklegullPoleringProject = () => {
     description: "Profesjonell nettside for Myklegull Polering & Vask i Kristiansand. Selskapet tilbyr premium bilpolering og bilvask med fokus på høy kvalitet og kundetilfredshet.",
     challenges: "Som et nyoppstartet selskap hadde Myklegull ingen digital tilstedeværelse. De trengte en komplett nettløsning som kunne bygge troverdighet, vise frem tjenestene deres, og gjøre det enkelt for kunder å bestille time.",
     solutions: "Vi skapte en moderne, visuelt imponerende nettside som fremhever selskapets profesjonalitet og kvalitetsfokus. Designet kombinerer kraftige visuelle elementer med tydelig informasjon om tjenester og priser. Det integrerte bookingsystemet gjør det enkelt for kunder å velge tjeneste, dato og tidspunkt direkte på nettsiden.",
+    url: "https://myklegull.no",
     bgColor: "#000000"
   };
 
@@ -61,7 +63,7 @@ const MyklegullPoleringProject = () => {
                 <p className="text-brand-gray">{project.solutions}</p>
               </div>
 
-              <div className="bg-gray-50 p-6 rounded-lg">
+              <div className="bg-gray-50 p-6 rounded-lg mb-8">
                 <h3 className="text-xl font-semibold text-brand-blue mb-4">Leveranser</h3>
                 <ul className="space-y-2 text-brand-gray">
                   <li className="flex items-start">
@@ -90,6 +92,16 @@ const MyklegullPoleringProject = () => {
                   </li>
                 </ul>
               </div>
+
+              <a 
+                href={project.url} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-brand-blue hover:text-brand-accent transition-colors"
+              >
+                Besøk nettside
+                <ExternalLink className="ml-2 h-4 w-4" />
+              </a>
             </div>
           </div>
         </div>
