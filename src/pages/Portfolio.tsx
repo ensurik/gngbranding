@@ -5,6 +5,7 @@ import CallToAction from "@/components/CallToAction";
 import { ExternalLink } from "lucide-react";
 import KalbakkenEngrosLogo from "@/assets/kalbakken-engros-logo.png";
 import DBLydLysLogo from "@/assets/db-lyd-lys-logo.png";
+import MyklegullLogo from "@/assets/myklegull-logo.jpg";
 import { Link } from "react-router-dom";
 
 const Portfolio = () => {
@@ -30,6 +31,17 @@ const Portfolio = () => {
       logo: DBLydLysLogo,
       bgColor: "#1a1a2e",
       slug: "db-lyd-lys"
+    },
+    {
+      title: "Myklegull Polering & Vask",
+      category: "Webdesign & Bookingløsning",
+      description: "Profesjonell nettside for Myklegull Polering & Vask i Kristiansand. Selskapet tilbyr premium bilpolering og bilvask, og trengte en digital tilstedeværelse som reflekterte deres høye kvalitet og profesjonalitet.",
+      challenges: "Som et nytt selskap hadde Myklegull ingen nettside fra før. De trengte en komplett digital løsning som kunne vise frem deres tjenester, bygge tillit hos potensielle kunder, og håndtere bookinger effektivt.",
+      solutions: "Vi utviklet en moderne, visuelt imponerende nettside med integrert bookingløsning. Designet fremhever selskapets fokus på kvalitet og detaljorientering, med høykvalitets bilder og tydelig informasjon om tjenester og priser. Bookingsystemet gjør det enkelt for kunder å bestille time direkte på nettsiden.",
+      url: "",
+      logo: MyklegullLogo,
+      bgColor: "#000000",
+      slug: "myklegull-polering"
     },
   ];
 
