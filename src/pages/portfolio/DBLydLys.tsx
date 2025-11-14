@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CallToAction from "@/components/CallToAction";
+import Breadcrumb from "@/components/Breadcrumb";
 import { ExternalLink } from "lucide-react";
 import DBLydLysLogo from "@/assets/db-lyd-lys-logo.png";
 import { useEffect } from "react";
@@ -24,6 +25,13 @@ const DBLydLysProject = () => {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
+      <Breadcrumb 
+        items={[
+          { label: "Hjem", href: "/" },
+          { label: "Portefølje", href: "/portfolio" },
+          { label: project.title }
+        ]}
+      />
       
       {/* Hero Section */}
       <div className="bg-brand-blue text-white py-20">

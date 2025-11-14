@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CallToAction from "@/components/CallToAction";
+import Breadcrumb from "@/components/Breadcrumb";
 import MyklegullLogo from "@/assets/myklegull-logo.jpg";
 import { ExternalLink } from "lucide-react";
 
@@ -24,6 +25,13 @@ const MyklegullPoleringProject = () => {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
+      <Breadcrumb 
+        items={[
+          { label: "Hjem", href: "/" },
+          { label: "Portefølje", href: "/portfolio" },
+          { label: project.title }
+        ]}
+      />
       
       {/* Hero Section */}
       <div className="bg-brand-blue text-white py-20">
