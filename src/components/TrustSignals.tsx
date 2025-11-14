@@ -27,7 +27,8 @@ const TrustSignals = () => {
 
   const clients = [
     "Kalbakken Engros",
-    "DB Lyd & Lys"
+    "DB Lyd & Lys",
+    "Myklegull Polering & Vask"
   ];
 
   return (

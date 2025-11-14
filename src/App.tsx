@@ -23,6 +23,7 @@ import NettSideBedrift from "./pages/services/NettSideBedrift";
 // Import portfolio project pages
 import KalbakkenEngrosProject from "./pages/portfolio/KalbakkenEngros";
 import DBLydLysProject from "./pages/portfolio/DBLydLys";
+import MyklegullPoleringProject from "./pages/portfolio/MyklegullPolering";
 
 // Import legal pages
 import Personvern from "./pages/Personvern";
@@ -46,6 +47,7 @@ const App = () => (
         {/* Portfolio project routes */}
         <Route path="/portfolio/kalbakken-engros" element={<KalbakkenEngrosProject />} />
         <Route path="/portfolio/db-lyd-lys" element={<DBLydLysProject />} />
+        <Route path="/portfolio/myklegull-polering" element={<MyklegullPoleringProject />} />
         
         {/* Service routes */}
         <Route path="/tjenester/webdesign" element={<WebDesign />} />

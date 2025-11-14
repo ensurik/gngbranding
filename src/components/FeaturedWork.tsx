@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import KalbakkenEngrosLogo from "@/assets/kalbakken-engros-logo.png";
 import DBLydLysLogo from "@/assets/db-lyd-lys-logo.png";
+import MyklegullLogo from "@/assets/myklegull-logo.jpg";
 
 const FeaturedWork = () => {
   // Helper function to scroll to top and navigate
@@ -21,7 +22,7 @@ const FeaturedWork = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16">
           {/* Featured Project 1 */}
           <div className="bg-white rounded-lg overflow-hidden shadow-md group hover:shadow-xl transition-all duration-300">
             <div className="h-64 bg-[#9C2642] relative overflow-hidden flex items-center justify-center p-6">
@@ -63,6 +64,31 @@ const FeaturedWork = () => {
               </p>
               <Link 
                 to="/portfolio/db-lyd-lys" 
+                className="inline-flex items-center text-brand-blue hover:text-brand-accent transition-colors"
+                onClick={scrollToTop}
+              >
+                Se detaljer
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+          </div>
+
+          {/* Featured Project 3 */}
+          <div className="bg-white rounded-lg overflow-hidden shadow-md group hover:shadow-xl transition-all duration-300">
+            <div className="h-64 bg-black relative overflow-hidden flex items-center justify-center p-6">
+              <img 
+                src={MyklegullLogo} 
+                alt="Myklegull Polering & Vask Logo" 
+                className="max-h-full max-w-full object-contain"
+              />
+            </div>
+            <div className="p-6">
+              <h3 className="text-xl font-bold text-brand-blue mb-2">Myklegull Polering & Vask</h3>
+              <p className="text-brand-gray mb-4">
+                Profesjonell nettside med bookingløsning for bilpolering og bilvask i Kristiansand.
+              </p>
+              <Link 
+                to="/portfolio/myklegull-polering" 
                 className="inline-flex items-center text-brand-blue hover:text-brand-accent transition-colors"
                 onClick={scrollToTop}
               >

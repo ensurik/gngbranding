@@ -15,6 +15,12 @@ const Testimonials = () => {
       company: "DB Lyd & Lys",
       quote: "Vi hadde ikke nettside fra før, og GnGBranding gjorde hele prosessen enkel og grei. De forstod vår visjon med en gang og leverte en moderne nettside som virkelig representerer vår merkevare. Bookingsystemet fungerer perfekt, og vi har fått mange flere henvendelser siden lanseringen.",
       stars: 5,
+    },
+    {
+      name: "Tage Gullbrandsson",
+      company: "Myklegull Polering & Vask",
+      quote: "Som et nytt selskap hadde vi ikke nettside fra før. GnGBranding skapte en profesjonell nettløsning som virkelig løfter vårt merkevare. Nå får vi betydelig flere henvendelser, og kundene roser den brukervennlige bookingløsningen. De leverte på tid og forsto nøyaktig hva vi trengte.",
+      stars: 5,
     }
   ];
 
