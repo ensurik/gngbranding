@@ -92,10 +92,6 @@ const MyklegullPoleringProject = () => {
                   </li>
                   <li className="flex items-start">
                     <span className="text-brand-accent mr-2">✓</span>
-                    Kontaktskjema og Google Maps integrasjon
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-brand-accent mr-2">✓</span>
                     GDPR-kompatibel løsning
                   </li>
                 </ul>
