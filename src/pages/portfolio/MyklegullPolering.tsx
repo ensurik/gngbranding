@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -6,7 +5,6 @@ import CallToAction from "@/components/CallToAction";
 import Breadcrumb from "@/components/Breadcrumb";
 import MyklegullLogo from "@/assets/myklegull-logo.jpg";
 import { ExternalLink } from "lucide-react";
-
 const MyklegullPoleringProject = () => {
   const project = {
     title: "Myklegull Polering & Vask",
@@ -17,21 +15,20 @@ const MyklegullPoleringProject = () => {
     url: "https://myklegull.no",
     bgColor: "#000000"
   };
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  return (
-    <div className="min-h-screen bg-white">
+  return <div className="min-h-screen bg-white">
       <Navbar />
-      <Breadcrumb 
-        items={[
-          { label: "Hjem", href: "/" },
-          { label: "Portefølje", href: "/portfolio" },
-          { label: project.title }
-        ]}
-      />
+      <Breadcrumb items={[{
+      label: "Hjem",
+      href: "/"
+    }, {
+      label: "Portefølje",
+      href: "/portfolio"
+    }, {
+      label: project.title
+    }]} />
       
       {/* Hero Section */}
       <div className="bg-brand-blue text-white py-20">
@@ -47,15 +44,10 @@ const MyklegullPoleringProject = () => {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-16">
-            <div 
-              className="h-96 rounded-lg flex items-center justify-center p-8"
-              style={{ backgroundColor: project.bgColor }}
-            >
-              <img 
-                src={MyklegullLogo} 
-                alt="Myklegull Polering & Vask Logo" 
-                className="max-h-full max-w-full object-contain"
-              />
+            <div className="h-96 rounded-lg flex items-center justify-center p-8" style={{
+            backgroundColor: project.bgColor
+          }}>
+              <img src={MyklegullLogo} alt="Myklegull Polering & Vask Logo" className="max-h-full max-w-full object-contain" />
             </div>
             <div>
               <h2 className="text-3xl font-bold text-brand-blue mb-6">Om Prosjektet</h2>
@@ -90,8 +82,8 @@ const MyklegullPoleringProject = () => {
                     <span className="text-brand-accent mr-2">✓</span>
                     SEO-optimalisering for lokale søk
                   </li>
-                  <li className="flex items-start">
-                    <span className="text-brand-accent mr-2">✓</span>
+                  <li className="flex items-start">✓
+Kontaktskjema integrasjon<span className="text-brand-accent mr-2">✓</span>
                     Kontaktskjema og Google Maps integrasjon
                   </li>
                   <li className="flex items-start">
@@ -101,12 +93,7 @@ const MyklegullPoleringProject = () => {
                 </ul>
               </div>
 
-              <a 
-                href={project.url} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center text-brand-blue hover:text-brand-accent transition-colors"
-              >
+              <a href={project.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-brand-blue hover:text-brand-accent transition-colors">
                 Besøk nettside
                 <ExternalLink className="ml-2 h-4 w-4" />
               </a>
@@ -117,8 +104,6 @@ const MyklegullPoleringProject = () => {
       
       <CallToAction />
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default MyklegullPoleringProject;
