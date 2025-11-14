@@ -32,7 +32,7 @@ const About = () => {
     {
       name: "Gabriel Milinkovic",
       title: "Medgrunnlegger & Kreativ Direktør",
-      bio: "Gabriel er en ung gründer som brenner for design og små bedrifters potensial. Med kreativ tenkning og selvlært kompetanse innen grafisk design, startet han GnGBranding for å hjelpe lokale bedrifter med å løfte sin visuelle identitet.",
+      bio: "Gabriel har en lidenskap for design og små bedrifters potensial. Med kreativ tenkning og selvlært kompetanse innen grafisk design, startet han GnGBranding for å hjelpe lokale bedrifter med å løfte sin visuelle identitet.",
     },
     {
       name: "Felix M Di Giacomo Kristoffersen",
