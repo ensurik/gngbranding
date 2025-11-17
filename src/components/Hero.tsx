@@ -77,7 +77,7 @@ const Hero = () => {
 
   const benefits = [
     "Gratis demo av din nye nettside - helt uforpliktende",
-    "Ferdig nettside eller nettbutikk på kun 1 uke",
+    "Demo ferdig på kun 1 uke",
     "Moderne, responsivt design som konverterer besøkende til kunder",
     "SEO-optimalisert for høyere ranking på Google",
     "Gratis oppfølging i 3 måneder etter lansering"
