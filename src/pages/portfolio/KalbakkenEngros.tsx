@@ -6,8 +6,11 @@ import Breadcrumb from "@/components/Breadcrumb";
 import { ExternalLink } from "lucide-react";
 import KalbakkenEngrosLogo from "@/assets/kalbakken-engros-logo.png";
 import { useEffect } from "react";
+import { useCanonicalUrl } from "@/hooks/useCanonicalUrl";
 
 const KalbakkenEngrosProject = () => {
+  useCanonicalUrl();
+  
   const project = {
     title: "Kalbakken Engros",
     category: "Webdesign & Merkevare",

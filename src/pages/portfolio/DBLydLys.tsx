@@ -5,8 +5,11 @@ import Breadcrumb from "@/components/Breadcrumb";
 import { ExternalLink } from "lucide-react";
 import DBLydLysLogo from "@/assets/db-lyd-lys-logo.png";
 import { useEffect } from "react";
+import { useCanonicalUrl } from "@/hooks/useCanonicalUrl";
 
 const DBLydLysProject = () => {
+  useCanonicalUrl();
+  
   const project = {
     title: "DB Lyd & Lys",
     category: "Webdesign & Digital Strategi",

@@ -4,8 +4,11 @@ import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { useCanonicalUrl } from "@/hooks/useCanonicalUrl";
 
 const SEONettside = () => {
+  useCanonicalUrl();
+  
   const scrollToTop = () => {
     window.scrollTo(0, 0);
   };

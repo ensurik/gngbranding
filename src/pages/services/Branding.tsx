@@ -5,8 +5,11 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Megaphone, Check, ArrowRight } from "lucide-react";
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from "@/components/ui/breadcrumb";
+import { useCanonicalUrl } from "@/hooks/useCanonicalUrl";
 
 const Branding = () => {
+  useCanonicalUrl();
+  
   return (
     <div className="min-h-screen bg-white">
       <Navbar />

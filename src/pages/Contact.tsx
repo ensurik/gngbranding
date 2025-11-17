@@ -4,8 +4,10 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Phone, Mail, Clock } from "lucide-react";
 import emailjs from '@emailjs/browser';
+import { useCanonicalUrl } from "@/hooks/useCanonicalUrl";
 
 const Contact = () => {
+  useCanonicalUrl();
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",

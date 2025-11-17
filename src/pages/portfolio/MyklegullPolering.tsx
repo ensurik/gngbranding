@@ -6,8 +6,11 @@ import CallToAction from "@/components/CallToAction";
 import Breadcrumb from "@/components/Breadcrumb";
 import MyklegullLogo from "@/assets/myklegull-logo.jpg";
 import { ExternalLink } from "lucide-react";
+import { useCanonicalUrl } from "@/hooks/useCanonicalUrl";
 
 const MyklegullPoleringProject = () => {
+  useCanonicalUrl();
+  
   const project = {
     title: "Myklegull Polering & Vask",
     category: "Webdesign & Bookingløsning",

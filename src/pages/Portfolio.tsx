@@ -7,8 +7,11 @@ import KalbakkenEngrosLogo from "@/assets/kalbakken-engros-logo.png";
 import DBLydLysLogo from "@/assets/db-lyd-lys-logo.png";
 import MyklegullLogo from "@/assets/myklegull-logo.jpg";
 import { Link } from "react-router-dom";
+import { useCanonicalUrl } from "@/hooks/useCanonicalUrl";
 
 const Portfolio = () => {
+  useCanonicalUrl();
+  
   const projects = [
     {
       title: "Kalbakken Engros",

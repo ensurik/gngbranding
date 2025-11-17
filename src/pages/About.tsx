@@ -3,8 +3,11 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CallToAction from "@/components/CallToAction";
 import { CheckCircle, Users, TrendingUp, Award, Linkedin } from "lucide-react";
+import { useCanonicalUrl } from "@/hooks/useCanonicalUrl";
 
 const About = () => {
+  useCanonicalUrl();
+  
   const values = [
     {
       icon: <CheckCircle className="h-10 w-10 text-brand-accent" />,
