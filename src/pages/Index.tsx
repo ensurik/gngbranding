@@ -8,8 +8,11 @@ import Testimonials from "@/components/Testimonials";
 import CallToAction from "@/components/CallToAction";
 import Footer from "@/components/Footer";
 import TrustSignals from "@/components/TrustSignals";
+import { useCanonicalUrl } from "@/hooks/useCanonicalUrl";
 
 const Index = () => {
+  useCanonicalUrl();
+  
   // Scroll to top when the component mounts
   useEffect(() => {
     window.scrollTo(0, 0);

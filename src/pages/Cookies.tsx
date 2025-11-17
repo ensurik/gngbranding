@@ -5,8 +5,11 @@ import Footer from "@/components/Footer";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Link } from "react-router-dom";
 import { Cookie } from "lucide-react";
+import { useCanonicalUrl } from "@/hooks/useCanonicalUrl";
 
 const Cookies = () => {
+  useCanonicalUrl();
+  
   // Scroll to top when the component mounts
   useEffect(() => {
     window.scrollTo(0, 0);

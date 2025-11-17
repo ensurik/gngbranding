@@ -5,8 +5,11 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Globe, Check, ArrowRight } from "lucide-react";
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from "@/components/ui/breadcrumb";
+import { useCanonicalUrl } from "@/hooks/useCanonicalUrl";
 
 const WebDesign = () => {
+  useCanonicalUrl();
+  
   // Helper function to scroll to top when navigating
   const scrollToTop = () => {
     window.scrollTo(0, 0);
